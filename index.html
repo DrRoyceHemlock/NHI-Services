@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NHI Services | Premium Detailing</title>
+<meta name="description" content="NHI Services Oy | Ajoneuvojen puhdistus, kiillotus ja suojauskäsittelyt Porissa. Työstämme myös veneitä. Uunikatu 6, 28610 Pori.">
+<meta name="author" content="NHI Services Oy">
+<!-- Designed & built by Alex @ QUALIC — qualic.fi -->
+<meta name="theme-color" content="#080808">
+<meta name="designer" content="Alex @ QUALIC">
+<!-- FAVICON: Replace href with your .ico or .png favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<link rel="canonical" href="https://nhis.fi">
+<meta property="og:title" content="NHI Services | Premium Detailing">
+<meta property="og:description" content="Ajoneuvojen puhdistus, kiillotus ja suojauskäsittelyt. Työstämme myös veneitä. Pori.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nhis.fi">
+<!-- OG IMAGE: Add a 1200x630 preview image -->
+<meta property="og:image" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"NHI Services","url":"https://nhis.fi","founder":[{"@type":"Person","name":"Otto Nordquist"},{"@type":"Person","name":"Eemeli Haaslahti"},{"@type":"Person","name":"Joa Ingves"}],"areaServed":{"@type":"Country","name":"Finland"},"serviceType":["Auto Detailing","Paint Correction","Boat Detailing","Interior Cleaning"],"address":{"@type":"PostalAddress","streetAddress":"Uunikatu 6","addressLocality":"Pori","postalCode":"28610","addressCountry":"FI"},"telephone":"+358409342100","email":"nhiservices@nhis.fi","openingHours":"Mo-Su 08:00-18:00","availableLanguage":["Finnish","Swedish","English"]}</script>
+<style>
+:root {
+  --bg:#080808;--bg1:#0d0d0d;--bg2:#131313;--bg3:#1a1a1a;--bg4:#222;
+  --brd:#181818;--brd2:#262626;--brd3:#353535;
+  --t1:#f2f2ef;--t2:#b5b5b0;--t3:#7d7d78;
+  --red:#c22318;--redl:#d93025;
+  --grn:#34c472;--grnd:#289e5a;--grnl:rgba(52,196,114,.12);
+  --amb:#d9a012;--ambl:rgba(217,160,18,.12);
+  --ff:'Inter',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --data:'Fira Code',monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --sab:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:52px;background:var(--bg);color-scheme:dark;overflow-x:hidden}
+body{font-family:var(--ff);background:var(--bg);color:var(--t2);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw;padding-bottom:calc(56px + var(--sab))}
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.015'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4}
+::selection{background:var(--redl);color:#fff}
+*{background-color:transparent}
+html,body,.sec,.sec-a,.hero{background-color:var(--bg)}
+.foot{background-color:transparent}
+.sec-a{background-color:var(--bg1)}
+.sv,.tm,.ba-banner{background-color:var(--bg2)}
+.fi,.fsl,.ft{background-color:var(--bg)}
+option{background-color:var(--bg2);color:var(--t1)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--grn);outline-offset:2px}
+
+/* ── NAV TOP ── */
+/* Active nav */
+.tn-links a.active{color:var(--t1)!important}
+.tn-links a.active::after{content:'';display:block;width:100%;height:2px;background:var(--redl);margin-top:2px;border-radius:1px}
+.bn-i.active .bn-ic{stroke:var(--t1)!important}.bn-i.active .bn-lb{color:var(--t1)!important}
+.tn{position:fixed;top:0;left:0;right:0;z-index:900;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;background:rgba(8,8,8,.55);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-bottom:none;overflow:visible}
+.tn::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(255,255,255,.08);z-index:0}
+
+.tn-logo{display:flex;align-items:center;gap:.5rem}
+.tn-logo-img{height:80px;width:auto;position:relative;z-index:901;margin-top:21px;margin-bottom:-28px;filter:drop-shadow(0 2px 12px rgba(0,0,0,.7))}
+.tn-logo-img[src=""]{display:none}
+.tn-logo-img:not([src=""]){display:block}
+.tn-logo-img:not([src=""])+.tn-logo-txt{display:none}
+.tn-logo-txt{font-weight:800;font-size:1rem;color:var(--t1);letter-spacing:.04em}
+.tn-logo-txt b{color:var(--redl);font-weight:900}
+.tn-r{display:flex;align-items:center;gap:1.25rem}
+.tn-links{display:flex;gap:1.5rem;list-style:none}
+.tn-links a{font-size:.8rem;font-weight:500;color:var(--t3);transition:color .15s}
+.tn-links a:hover{color:var(--redl)}
+.tn-cta{color:var(--t3);font-weight:600}.tn-cta:hover{color:var(--redl)}
+.ls{display:flex;background:var(--bg3);border-radius:4px;padding:2px;gap:1px}
+.lb{font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--t3);background:none;border:none;padding:4px 8px;cursor:pointer;border-radius:3px;transition:all .12s}
+.lb.on{color:var(--t1);background:var(--bg)}.lb:hover:not(.on){color:var(--t2)}
+
+/* ── NAV BOTTOM ── */
+.bn{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;height:calc(56px + var(--sab));padding-bottom:var(--sab);background:rgba(8,8,8,.75);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-top:1px solid rgba(255,255,255,.08);justify-content:space-around;align-items:center;transition:background .8s ease,border-color .8s ease}
+.bn.glow-on{border-top-color:rgba(217,48,37,.3);animation:glowPulse 3s ease-in-out infinite}
+.bn.glow-on .bn-ic{stroke:var(--t1)!important}
+.bn.glow-on .bn-lb{color:var(--t1)!important}
+.bn-i{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 12px;background:none;border:none;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.bn-ic{width:20px;height:20px;stroke:var(--t3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .12s}
+.bn-lb{font-family:var(--mono);font-size:.52rem;font-weight:500;color:var(--t3);transition:color .12s}
+.bn-i.cta .bn-ic{stroke:var(--t3)}.bn-i.cta .bn-lb{color:var(--t3)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--ff);font-size:.82rem;font-weight:600;letter-spacing:.01em;padding:.8rem 1.5rem;border:none;cursor:pointer;border-radius:4px;transition:all .12s var(--ease);-webkit-tap-highlight-color:transparent}
+.bp{background:var(--redl);color:#fff;box-shadow:0 0 20px rgba(217,48,37,.2)}
+.bp:hover{background:#e63b2e;box-shadow:0 0 28px rgba(217,48,37,.4)}
+.bp:active{transform:translateY(1px);box-shadow:none;transition-duration:.04s}
+.bsec{background:transparent;color:var(--t1);border:1.5px solid rgba(255,255,255,.5);backdrop-filter:blur(8px)}
+.bsec:hover{background:var(--redl);color:#fff;border-color:var(--redl)}
+.bsec:active{transform:translateY(2px);transition-duration:.04s}
+.ba{transition:transform .15s}.btn:hover .ba{transform:translateX(3px)}
+@keyframes breathe{0%,100%{opacity:1}50%{opacity:.7}}
+.btn:hover{animation:breathe 2.5s ease-in-out infinite}
+
+/* ── HERO ── */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:3.5rem 1.5rem 3rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse at 70% 40%, rgba(14,14,16,.0) 0%, var(--bg) 75%),
+  radial-gradient(ellipse at 30% 60%, rgba(20,18,16,.15) 0%, transparent 50%),
+  linear-gradient(175deg, #0c0c0e 0%, #0a0a0a 40%, #080808 100%);
+}
+.hero-bg::after{content:'';position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(transparent,var(--bg))}
+/* Hero car image */
+.hero-car{position:absolute;right:-5%;top:50%;transform:translateY(-50%);max-width:70%;max-height:90%;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;opacity:.55;filter:brightness(.7);z-index:0;will-change:opacity}
+.hero-car[src=""]{display:none}.hero-car:not([src=""]){display:block}
+@media(max-width:639px){.cg{grid-template-columns:1fr}.hero-car{max-width:95%;right:-10%;opacity:.35}}
+.hero>*:not(.hero-car):not(.hero-bg){position:relative;z-index:1}
+
+.hero-tag{font-family:var(--mono);font-size:.82rem;font-weight:500;color:var(--t2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+.hero-tag::before{content:'';width:24px;height:2px;background:var(--redl)}
+.hero h1{font-size:clamp(2.2rem,7.5vw,4.8rem);font-weight:900;line-height:1.12;color:var(--t1);letter-spacing:-.03em;margin-bottom:1.8rem}
+.hero-sub{font-size:1.1rem;color:var(--t2);max-width:460px;line-height:1.75;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.hero-btns:has(.bsec:hover) .bp{background:transparent;color:var(--t1);border:1.5px solid rgba(255,255,255,.5);box-shadow:none}
+
+.hero-tag,.hero h1,.hero-sub,.hero-btns{opacity:0;transform:translateY(16px)}
+body.ld .hero-tag{animation:si .55s .05s var(--ease) forwards}
+body.ld .hero h1{animation:si .55s .14s var(--ease) forwards}
+body.ld .hero-sub{animation:si .55s .24s var(--ease) forwards}
+body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
+@keyframes si{to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTIONS ── */
+.sec{padding:5rem 1.5rem;position:relative;overflow:hidden}
+
+.sec-a{background:var(--bg1)}
+.divider{height:1px;position:relative;margin:0;overflow:hidden;background:var(--bg)}
+.divider::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--brd2) 15%,var(--brd2) 85%,transparent)}
+.divider::after{content:'';position:absolute;top:50%;left:2%;right:2%;transform:translateY(-50%);height:2px;border-radius:1px;background:linear-gradient(90deg,transparent,var(--redl) 30%,var(--redl) 70%,transparent);filter:blur(1px);animation:divPulse 3s ease-in-out infinite}
+@keyframes divPulse{0%,100%{opacity:.25}50%{opacity:.7}}
+@keyframes glowPulse{0%,100%{background:rgba(120,18,14,.25)}50%{background:rgba(120,18,14,.4)}}
+.sh{margin-bottom:2.25rem}
+.sl{font-family:var(--mono);font-size:.82rem;font-weight:500;color:var(--t2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
+.sl::before{content:'';width:12px;height:2px;background:var(--redl);border-radius:1px}
+.st{font-size:clamp(1.65rem,5.5vw,2.5rem);font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.12}
+
+/* ── TEAM ── */
+.team-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.tm{background:var(--bg2);border:1px solid var(--brd);border-radius:8px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.tm:hover{border-color:rgba(194,35,24,.25);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.tm-ph{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--bg3) 0%,var(--bg2) 100%);display:flex;align-items:center;justify-content:center; overflow:hidden}
+.tm-circ{width:56px;height:56px;border-radius:50%;border:2px solid var(--brd2)}
+.tm-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s var(--ease)}
+.tm-ph:hover .tm-img{transform:scale(1.05)}
+/* When img has src, hide placeholder circle */
+.tm-nfo{padding:1rem}
+.tm-n{font-size:1rem;font-weight:700;color:var(--t1);margin-bottom:.15rem;line-height:1.2}
+.tm-ln{display:inline}
+@media(max-width:639px){.tm-ln{display:block}.map-wrap{min-height:200px}.end-glow{height:180px}}
+.tm-r{font-family:var(--data);font-size:.65rem;font-weight:400;color:var(--amb);letter-spacing:.04em;text-transform:uppercase}
+.team-txt{font-size:1.05rem;color:var(--t2);line-height:1.75;max-width:560px}
+.team-txt b{color:var(--t1);font-weight:600}
+
+/* ── SERVICES ── */
+.sg{display:grid;gap:10px}
+.sv{background:var(--bg2);border:1px solid var(--brd);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:all .25s var(--ease);border-left:3px solid var(--redl)}
+.sv:hover{border-color:var(--brd3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.35);border-left-color:var(--redl)}
+.sv-top{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem}
+.sv-name{font-size:1.15rem;font-weight:700;color:var(--t1);flex:1;min-width:0}
+.sv-price{font-family:var(--data);font-size:.92rem;font-weight:600;color:var(--amb);letter-spacing:.02em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-end;gap:0}
+.sv-price-num{background:var(--ambl);padding:.15rem .55rem;border-radius:3px}
+.sv-price small{font-size:.65rem;color:var(--t3);font-weight:400;font-family:var(--mono);margin-top:2px}
+.sv-desc{font-size:.95rem;color:var(--t3);line-height:1.65;display:flex;align-items:flex-start;gap:.4rem}
+.sv-cta{display:inline-flex;align-items:center;gap:.35rem;font-size:.84rem;font-weight:600;color:var(--amb);padding-top:.7rem;border-top:1px solid var(--brd2);transition:color .15s;margin-top:auto;}
+.sv-cta:hover{color:var(--redl);animation:none}
+.sv-cta span{transition:transform .12s}.sv-cta:hover span{transform:translateX(3px)}
+
+
+
+/* ACCORDION */
+.sv-expand{max-height:0;overflow:hidden;transition:max-height .85s cubic-bezier(.22,.61,.36,1);padding:0 0}
+.sv.open .sv-expand{max-height:400px}
+.sv-detail{padding:.6rem 0 .25rem;font-size:.88rem;color:var(--t3);line-height:1.65}
+.sv-detail ul{list-style:none;padding:0}
+.sv-detail img{width:100%;max-height:280px;object-fit:cover;border-radius:6px;margin:.5rem 0}
+.sv-detail li{padding:.2rem 0;padding-left:1rem;position:relative}
+.sv-detail li::before{content:'—';position:absolute;left:0;color:var(--amb)}
+.sv-toggle{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sv-toggle .sv-chev{display:inline-flex;align-items:center;justify-content:center;transition:color .15s;font-style:normal;transition:transform .7s cubic-bezier(.22,.61,.36,1);margin-left:auto;color:var(--amb);width:26px;height:26px;border:1.5px solid var(--brd3);border-radius:50%;vertical-align:middle;flex-shrink:0}
+.sv.open .sv-chev{transform:rotate(180deg);border-color:var(--amb);box-shadow:0 0 8px rgba(217,160,18,.25)}
+.sv:hover .sv-chev{color:var(--redl);border-color:rgba(194,35,24,.4)}
+.sv.open:hover .sv-chev{color:var(--amb);border-color:var(--amb)}
+/* Process accordion */
+.ps-expand{max-height:0;overflow:hidden;transition:max-height .85s cubic-bezier(.22,.61,.36,1);border-radius:8px;}
+.ps.open .ps-expand{max-height:500px}
+.ps-detail{padding:.75rem 0 .25rem;font-size:.88rem;color:var(--t3);line-height:1.65;display:flex;flex-direction:column;gap:.5rem}
+.ps-detail img{width:100%;border-radius:8px;margin:0;opacity:0;transition:opacity .5s .2s var(--ease);object-fit:cover}
+.ps-detail img[src=""]{display:none!important}
+.sv-detail img[src=""]{display:none!important}
+@media(min-width:640px){.ps-detail{flex-direction:row;align-items:flex-start;gap:1rem}
+.ps-detail img{width:45%;min-height:160px;max-height:240px;flex-shrink:0;order:2;margin-bottom:4px;}
+.ps-detail-txt{flex:1;order:1}}
+.ps.open .ps-detail img{opacity:1}
+.ps-toggle{cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+/* ── PROCESS ── */
+.ps{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.ps:last-child{border-bottom:none}
+.pn{font-family:var(--data);font-size:.88rem;font-weight:400;color:var(--amb);width:2rem;padding-top:3px;transition:color .2s}
+
+.pc h3{font-size:1.05rem;font-weight:700;color:var(--t1);margin-bottom:.2rem}
+.pc p{font-size:.95rem;color:var(--t3);line-height:1.65}
+
+.ps-chev{font-style:normal;margin-left:.35rem;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1.5px solid var(--brd3);border-radius:50%;transition:transform .7s cubic-bezier(.22,.61,.36,1);color:var(--amb);vertical-align:middle;flex-shrink:0}
+.ps.open .ps-chev{transform:rotate(180deg);border-color:var(--amb);box-shadow:0 0 8px rgba(217,160,18,.25)}
+.ps:hover .ps-chev{color:var(--redl);border-color:rgba(194,35,24,.4)}
+.ps.open:hover .ps-chev{color:var(--amb);border-color:var(--amb)}
+
+/* ── BEFORE/AFTER ── */
+.ba-banner{background:var(--bg2);border:1px solid var(--brd);border-radius:8px;padding:1.5rem;display:flex;align-items:center;gap:1.25rem;margin-top:2rem}
+.ba-icon{width:44px;height:44px;border-radius:50%;background:var(--ambl);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ba-icon svg{width:20px;height:20px;stroke:var(--amb);fill:none;stroke-width:1.8;stroke-linecap:round}
+.ba-text h4{font-size:.92rem;font-weight:700;color:var(--t1);margin-bottom:.15rem}
+.ba-text p{font-size:.88rem;color:var(--t3);line-height:1.55}
+
+
+/* REVIEWS */
+.rv-g{display:grid;grid-template-columns:1fr;gap:10px}
+.rv{background:var(--bg2);border:1px solid var(--brd);border-radius:8px;padding:1.25rem}
+.rv-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.rv-av{width:32px;height:32px;border-radius:50%;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--t1);flex-shrink:0}
+.rv-info{display:flex;flex-direction:column}
+.rv-name{font-size:.88rem;font-weight:600;color:var(--t1)}
+.rv-meta{font-size:.78rem;color:var(--t3)}
+.rv-stars{color:#fbbc04;font-size:.85rem;letter-spacing:1px;margin-bottom:.35rem}
+.rv-text{font-size:.92rem;color:var(--t2);line-height:1.6}
+.rv-goog{display:flex;align-items:center;gap:.35rem;margin-top:1rem;font-size:.82rem;color:var(--t3)}
+.rv-goog svg{width:14px;height:14px}
+@media(min-width:640px){.rv-g{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.rv-g{grid-template-columns:1fr 1fr 1fr}}
+/* ── GALLERY ── */
+.gg{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;border-radius:8px;overflow:hidden}
+.gc{aspect-ratio:1;background:var(--bg3);position:relative;overflow:hidden}
+.gc-img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transition:transform .4s var(--ease)}
+.gc:hover .gc-img{transform:scale(1.04)}
+.gp{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:500;color:var(--t3);letter-spacing:.08em;opacity:.3}
+.gf{padding:1.25rem 0 0;text-align:center}
+.gf a{font-size:.88rem;font-weight:600;color:var(--t3);transition:color .15s}
+.gf a:hover{color:var(--redl)}
+
+/* ── CONTACT ── */
+.cb{display:grid;gap:2.5rem}
+.cb-right{order:0}
+@media(max-width:959px){.cb-right{padding-bottom:1.5rem;border-bottom:1px solid var(--brd);margin-bottom:0}
+.cb{gap:1.5rem}}
+.cb>div:first-child{order:1}
+.cb>div:first-child{display:flex;flex-direction:column;min-height:0}
+.cg{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:640px){.cg{grid-template-columns:repeat(3,1fr)}}
+.cc{display:flex;align-items:center;gap:.65rem;padding:.85rem 1rem;background:var(--bg2);border:1px solid var(--brd);border-radius:8px;transition:border-color .15s,transform .15s;text-decoration:none}
+.cc:hover{border-color:var(--brd3);transform:translateY(-1px)}
+
+.cc-ic{font-size:1.1rem;flex-shrink:0;width:28px;text-align:center}
+.cc-info{display:flex;flex-direction:column;min-width:0}
+.cc-lb{font-size:.74rem;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.04em}
+.cc-vl{font-size:.92rem;font-weight:500;color:var(--t1);transition:color .12s;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc-phones{display:flex;flex-direction:column;gap:.15rem}
+.cc-phones a{color:var(--t1);text-decoration:none;font-size:.92rem;font-weight:500;font-family:var(--data);white-space:nowrap;transition:color .15s;display:inline-block}
+.cc-phones a:hover{color:var(--redl)}
+.cc:hover .cc-vl{color:var(--redl)}
+
+.fm{display:grid;gap:.85rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.ff{display:grid;gap:.25rem}
+.fl{font-size:.82rem;font-weight:500;color:var(--t3)}
+.fi,.fsl,.ft{width:100%;background:var(--bg);border:1px solid var(--brd2);color:var(--t1);font-family:var(--ff);font-size:16px;padding:.75rem .85rem;border-radius:4px;outline:none;transition:border-color .12s,box-shadow .12s}
+.fi:focus,.fsl:focus,.ft:focus{border-color:var(--grn);box-shadow:0 0 0 3px var(--grnl)}
+.fi::placeholder,.ft::placeholder{color:var(--t3)}
+.fsl{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cpath d='M2 3.5l3 3 3-3' fill='none' stroke='%237d7d78' stroke-width='1.2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:2rem}
+.ft{resize:vertical;min-height:80px}
+
+
+/* MAP EMBED */
+.map-wrap{margin-top:.85rem;border-radius:8px;overflow:hidden;border:none;flex:1;margin-bottom:0}
+.map-wrap iframe{width:100%;height:100%;min-height:200px;border:0;filter:invert(90%) hue-rotate(180deg) brightness(.95) contrast(.9)}
+/* ── WHATSAPP ── */
+.waf{position:fixed;bottom:1.5rem;right:1.5rem;z-index:800;width:52px;height:52px;border-radius:50%;background:var(--grn);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(52,196,114,.35);transition:all .15s;cursor:pointer}
+.waf:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(52,196,114,.45)}
+.waf:active{transform:scale(.95)}
+.waf svg{width:26px;height:26px;fill:#fff}
+
+/* ── FOOTER ── */
+.end-glow{position:fixed;bottom:0;left:0;right:0;height:300px;background:linear-gradient(to top,rgba(194,35,24,.15) 0%,rgba(194,35,24,.07) 20%,rgba(194,35,24,.03) 50%,transparent 85%);pointer-events:none;z-index:800;opacity:0;transition:opacity 1s ease}
+@media(max-width:639px){.foot{flex-direction:column;gap:.5rem}.foot-r{order:-1}
+.team-bottom{flex-direction:column!important}.team-partner{margin-left:0!important;width:100%!important}}
+.foot-r a{color:var(--t3);transition:color .15s}
+.foot-r a:hover{color:var(--redl)}
+.foot{padding:1.25rem 1.5rem;border-top:none;background-color:#080808;background:var(--bg);position:relative;z-index:1;transition:color .8s ease;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.foot-l{font-size:.85rem;color:var(--t3)}
+.foot-r{display:flex;gap:1.25rem}
+.foot-r a{font-size:.85rem;font-weight:500;color:var(--t3);transition:color .12s}
+.foot-r a:hover{color:var(--redl)}
+.foot.glow-on{animation:glowPulse 3s ease-in-out infinite}
+.foot.glow-on .foot-l,.foot.glow-on .foot-r a{color:var(--t2);transition:color .8s ease}
+
+/* ── SCROLL ── */
+.sr{opacity:0;transform:translateY(32px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.sr.v{opacity:1;transform:translateY(0)}
+.srs{opacity:0;transform:translateY(22px) scale(.97);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.srs.v{opacity:1;transform:translateY(0) scale(1)}
+
+/* ── RESPONSIVE ── */
+@media(min-width:640px){.sg{grid-template-columns:1fr 1fr}.gg{grid-template-columns:repeat(4,1fr)}.cg{grid-template-columns:1fr 1fr 1fr}}
+@media(min-width:960px){
+  .tn{padding:0 3rem}.hero{padding:6rem 3rem}.sec{padding:5.5rem 3rem}
+  .sg{grid-template-columns:repeat(3,1fr)}.cb{grid-template-columns:1fr 1.5fr;gap:3rem;align-items:stretch}
+.cb-right{order:0}
+@media(max-width:959px){.cb-right{padding-bottom:1.5rem;border-bottom:1px solid var(--brd);margin-bottom:0}
+.cb{gap:1.5rem}}
+.cb>div:first-child{order:0}
+  .foot{padding:1.25rem 3rem}.bn{display:none!important}body{padding-bottom:0}
+}
+@media(min-width:1200px){.tn{padding:0 5rem}.hero{padding:7rem 5rem}.sec{padding:6rem 5rem}.foot{padding:1.25rem 5rem}}
+@media(max-width:959px){.tn-links{display:none}.bn{display:flex}.waf{bottom:calc(68px + var(--sab));right:1.25rem}}
+@media(max-width:639px){.cg{grid-template-columns:1fr}.fr{grid-template-columns:1fr}.cg{grid-template-columns:1fr;gap:1rem}.ba-banner{flex-direction:column;text-align:center}}
+
+@media print{.tn,.bn,.waf,body::before,body::after,.divider::after{display:none!important}.hero{min-height:auto;padding:2rem 0}.sec{padding:2rem 0}}
+</style>
+
+<!-- 
+  WORDPRESS INTEGRATION NOTES:
+  
+  CONTACT FORM: Replace <form class="fm" id="cForm">...</form> with:
+  [contact-form-7 id="YOUR_FORM_ID" html_class="fm"]
+  Style CF7 fields to match using .fm .wpcf7-form-control
+  
+  INSTAGRAM FEED: Replace the gallery grid <div class="sg sr">...</div> with:
+  [instagram-feed feed=1]
+  The feed will inherit the section padding. Smash Balloon plugin recommended.
+  
+  Both will align within the existing section containers (max-width:1080px centered).
+-->
+</head>
+<body>
+
+<nav class="tn" role="navigation" aria-label="Main">
+<a href="#" class="tn-logo">
+<!-- LOGO: Set src to your logo file -->
+<img class="tn-logo-img" src="/Users/alex/Documents/NHI Services Oy/nhiservices.svg" alt="NHI Services">
+<span class="tn-logo-txt"><b>NHI</b> Services</span>
+</a>
+<div class="tn-r">
+<ul class="tn-links">
+<li><a href="#tiimi" data-fi="Tekijät" data-sv="Teamet" data-en="Team">Tekijät</a></li>
+<li><a href="#palvelut" data-fi="Palvelut" data-sv="Tjänster" data-en="Services">Palvelut</a></li>
+<li><a href="#prosessi" data-fi="Prosessi" data-sv="Process" data-en="Process">Prosessi</a></li>
+<li><a href="#yhteys" class="tn-cta" data-fi="Yhteystiedot" data-sv="Kontakt" data-en="Contact">Yhteystiedot</a></li>
+</ul>
+<div class="ls" role="group" aria-label="Language">
+<button class="lb on" onclick="setLang('fi')">FI</button>
+<button class="lb" onclick="setLang('sv')">SV</button>
+<button class="lb" onclick="setLang('en')">EN</button>
+</div>
+</div>
+</nav>
+
+<nav class="bn" role="navigation" aria-label="Mobile">
+<a href="#tiimi" class="bn-i"><svg class="bn-ic" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M5.5 20a6.5 6.5 0 0113 0"/></svg><span class="bn-lb" data-fi="Tekijät" data-sv="Team" data-en="Team">Tekijät</span></a>
+<a href="#palvelut" class="bn-i"><svg class="bn-ic" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="bn-lb" data-fi="Palvelut" data-sv="Tjänster" data-en="Services">Palvelut</span></a>
+<a href="#prosessi" class="bn-i"><svg class="bn-ic" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/><line x1="12" y1="12" x2="20" y2="12"/><line x1="12" y1="5" x2="20" y2="5"/></svg><span class="bn-lb" data-fi="Prosessi" data-sv="Process" data-en="Process">Prosessi</span></a>
+<a href="#yhteys" class="bn-i cta"><svg class="bn-ic" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><span class="bn-lb" data-fi="Yhteystiedot" data-sv="Kontakt" data-en="Contact">Yhteystiedot</span></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<!-- HERO IMAGE: Set src to a transparent-background car photo (PNG or WebP) -->
+<img class="hero-car" src="/Users/alex/Documents/NHI Services Oy/IMG_3198-Photoroom.png" alt="">
+<p class="hero-tag" data-fi="Premium Detailing" data-sv="Premium Detailing" data-en="Premium Detailing">Premium Detailing</p>
+<h1 data-fi="Autosi ansaitsee&lt;br&gt;huolenpitoa." data-sv="Din bil förtjänar&lt;br&gt;omsorg." data-en="Your car deserves&lt;br&gt;care.">Autosi ansaitsee<br>huolenpitoa.</h1>
+<p class="hero-sub" data-fi="Puhdistus, kiillotus ja suojauskäsittelyt ajoneuvoille. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Hoidamme myös veneet." data-sv="Rengöring, polering och skyddsbehandlingar för fordon. Ingen snabbtvätt, utan noggrant hantverk och finish. Vi tar hand om båtar också." data-en="Vehicle cleaning, polishing and protection. No quick wash. Careful craftsmanship. Boats too.">Puhdistus, kiillotus ja suojauskäsittelyt ajoneuvoille. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Hoidamme myös veneet.</p>
+<div class="hero-btns">
+<a href="#yhteys" class="btn bp"><span class="btn-tx" data-fi="Pyydä tarjous" data-sv="Begär offert" data-en="Get a quote">Pyydä tarjous</span> <span class="ba">→</span></a>
+<a href="#palvelut" class="btn bsec"><span class="btn-tx" data-fi="Katso palvelut" data-sv="Se tjänster" data-en="View services">Katso palvelut</span></a>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="sec sec-a" id="tiimi">
+<div class="sh sr">
+<div class="sl" data-fi="Tekijät" data-sv="Teamet" data-en="The team">Tekijät</div>
+<h2 class="st" data-fi="Nordquist. Haaslahti. Ingves." data-sv="Nordquist. Haaslahti. Ingves." data-en="Nordquist. Haaslahti. Ingves.">Nordquist. Haaslahti. Ingves.</h2>
+</div>
+<div class="team-g sr">
+<div class="tm">
+<div class="tm-ph">
+<!-- PHOTO: Otto Nordquist — replace src with photo path -->
+<img class="tm-img" src="/Users/alex/Documents/NHI Services Oy/joateam.svg" alt="Otto Nordquist" style="display:none">
+<div class="tm-circ"></div>
+</div>
+<div class="tm-nfo"><div class="tm-n">Otto <span class="tm-ln">Nordquist</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div>
+</div>
+<div class="tm">
+<div class="tm-ph">
+<!-- PHOTO: Eemeli Haaslahti — replace src with photo path -->
+<img class="tm-img" src="/Users/alex/Documents/NHI Services Oy/joateam.svg" alt="Eemeli Haaslahti" style="display:none">
+<div class="tm-circ"></div>
+</div>
+<div class="tm-nfo"><div class="tm-n">Eemeli <span class="tm-ln">Haaslahti</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div>
+</div>
+<div class="tm">
+<div class="tm-ph">
+<!-- PHOTO: Joa Ingves — replace src with photo path -->
+<img class="tm-img" src="/Users/alex/Documents/NHI Services Oy/joateam.svg" alt="Joa Ingves" style="display:none">
+<div class="tm-circ"></div>
+</div>
+<div class="tm-nfo"><div class="tm-n">Joa <span class="tm-ln">Ingves</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div>
+</div>
+</div>
+<div class="team-bottom sr" style="display:flex;gap:2rem;align-items:flex-start;margin-top:1.5rem">
+<p class="team-txt" style="flex:1" data-fi="Kolme nuorta yrittäjää, pitkä alan harrastustausta ja koulutus ajoneuvojen pintakäsittelyyn. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Teemme huolellista työtä ja hoidamme jokaisen ajoneuvon yksilöllisesti. &lt;b&gt;N&lt;/b&gt;ordquist, &lt;b&gt;H&lt;/b&gt;aaslahti, &lt;b&gt;I&lt;/b&gt;ngves. Siitä se nimi tulee." data-sv="Tre unga företagare med lång erfarenhet och utbildning inom ytbehandling av fordon. Ingen snabbtvätt, utan noggrant hantverk och finish. Vi gör omsorgsfullt arbete och tar hand om varje fordon individuellt. &lt;b&gt;N&lt;/b&gt;ordquist, &lt;b&gt;H&lt;/b&gt;aaslahti, &lt;b&gt;I&lt;/b&gt;ngves. Därav namnet." data-en="Three young entrepreneurs with extensive experience and training in vehicle surface treatment. No quick wash. Careful craftsmanship and finishing. We do meticulous work and treat every vehicle individually. &lt;b&gt;N&lt;/b&gt;ordquist, &lt;b&gt;H&lt;/b&gt;aaslahti, &lt;b&gt;I&lt;/b&gt;ngves. That's where the name comes from.">Kolme nuorta yrittäjää, pitkä alan harrastustausta ja koulutus ajoneuvojen pintakäsittelyyn. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Teemme huolellista työtä ja hoidamme jokaisen ajoneuvon yksilöllisesti. <b>N</b>ordquist, <b>H</b>aaslahti, <b>I</b>ngves. Siitä se nimi tulee.</p>
+<div class="team-partner" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:1.25rem 1.5rem;border:1px solid var(--brd);border-radius:6px;background:var(--bg2);flex-shrink:0;margin-left:auto;min-height:120px;min-width:180px">
+<!-- CARTEC LOGO: Replace src with logo file, auto-shows when added -->
+<img src="/Users/alex/Documents/NHI Services Oy/Square_Logo_e805b9ab-aa74-41e0-afd6-ff5cb1a3b9ba_592x.jpg-Photoroom.png" alt="Cartec" style="height:72px;width:auto;opacity:.7;filter:brightness(1.2);" class="cartec-logo">
+<span style="font-size:.68rem;color:var(--t2);font-family:var(--mono);letter-spacing:.04em;white-space:nowrap;margin-top:auto" data-fi="Virallinen Cartec-kumppani" data-sv="Officiell Cartec-partner" data-en="Official Cartec partner">Virallinen Cartec-kumppani</span>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section class="sec" id="palvelut">
+<div class="sh sr">
+<div class="sl" data-fi="Palvelut ja hinnat" data-sv="Tjänster och priser" data-en="Services & pricing">Palvelut ja hinnat</div>
+<h2 class="st" data-fi="Kaikki mitä autosi tarvitsee." data-sv="Allt din bil behöver." data-en="Everything your car needs.">Kaikki mitä autosi tarvitsee.</h2>
+</div>
+<div class="sg">
+<!-- SERVICES: To add more, copy any <article> block below -->
+<article class="sv srs sv-toggle" onclick="this.classList.toggle('open')">
+<div class="sv-top"><h3 class="sv-name" data-fi="Perusteellinen detailaus" data-sv="Grundlig detailing" data-en="Full Detailing">Perusteellinen detailaus</h3><div class="sv-price"><span class="sv-price-num" data-fi="alk. 95 €" data-sv="från 95 €" data-en="from €95">alk. 95 €</span><small data-fi="+alv" data-sv="+moms" data-en="+VAT">+alv</small></div></div>
+<p class="sv-desc" data-fi="Kokonaisvaltainen sisä- ja ulkopuhdistus. Suosituin palvelumme." data-sv="Heltäckande in- och utvändig rengöring. Vår mest populära tjänst." data-en="Complete interior and exterior clean. Our most popular service.">Kokonaisvaltainen sisä- ja ulkopuhdistus. Suosituin palvelumme. <span class="sv-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></span></p>
+<div class="sv-expand"><div class="sv-detail"><ul>
+<li data-fi="Sisätilat: imurointi, tekstiili- ja mattopesu, kojelaudan ja pintojen puhdistus" data-sv="Interiör: dammsugning, textil- och mattvätt, instrumentbräda och ytbehandling" data-en="Interior: vacuuming, textile and mat wash, dashboard and surface cleaning">Sisätilat: imurointi, tekstiili- ja mattopesu, kojelaudan ja pintojen puhdistus</li>
+<li data-fi="Ovien välien puhdistus, nahkapintojen puhdistus ja hoito" data-sv="Rengöring av dörrutrymmen, läderrengöring och -vård" data-en="Door gap cleaning, leather cleaning and conditioning">Ovien välien puhdistus, nahkapintojen puhdistus ja hoito</li>
+<li data-fi="Ulkopinta: vaahtopesu, raudanpoisto, pienpoisto, käsinpesu" data-sv="Utvändigt: skumtvätt, avjärning, tjärborttagning, handtvätt" data-en="Exterior: foam wash, iron removal, tar removal, hand wash">Ulkopinta: vaahtopesu, raudanpoisto, pienpoisto, käsinpesu</li>
+<li data-fi="Renkaat & vanteet, ovenvälit, kuivaus, suoja-aine maaleille & ikkunoille" data-sv="Däck & fälgar, dörrutrymmen, torkning, skyddsmedel för lack & glas" data-en="Tyres & rims, door gaps, drying, protection for paint & glass">Renkaat & vanteet, ovenvälit, kuivaus, suoja-aine maaleille & ikkunoille</li>
+<li data-fi="Työaika 2–4 h" data-sv="Arbetstid 2–4 h" data-en="Work time 2–4 h">Työaika 2–4 h</li>
+</ul></div></div>
+<a href="#yhteys" class="sv-cta" onclick="event.stopPropagation()" data-fi="Varaa aika" data-sv="Boka tid" data-en="Book now">Varaa aika <span>→</span></a>
+</article>
+<article class="sv srs sv-toggle" onclick="this.classList.toggle('open')">
+<div class="sv-top"><h3 class="sv-name" data-fi="Ylläpitosiivous" data-sv="Underhållsrengöring" data-en="Maintenance Clean">Ylläpitosiivous</h3><div class="sv-price"><span class="sv-price-num" data-fi="alk. 45 €" data-sv="från 45 €" data-en="from €45">alk. 45 €</span><small data-fi="+alv" data-sv="+moms" data-en="+VAT">+alv</small></div></div>
+<p class="sv-desc" data-fi="Kevyt ylläpitotason siistiminen aiemmin käsitellylle autolle." data-sv="Lätt underhållsrengöring för tidigare behandlad bil." data-en="Light maintenance cleaning for previously detailed cars.">Kevyt ylläpitotason siistiminen aiemmin käsitellylle autolle. <span class="sv-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></span></p>
+<div class="sv-expand"><div class="sv-detail"><ul>
+<li data-fi="Sisätilat: imurointi, pintojen kevyt pyyhintä, roska- ja pölypoisto" data-sv="Interiör: dammsugning, lätt avtorkning, skräp- och dammborttagning" data-en="Interior: vacuuming, light wiping, debris and dust removal">Sisätilat: imurointi, pintojen kevyt pyyhintä, roska- ja pölypoisto</li>
+<li data-fi="Soveltuu parhaiten ajoneuvoille, jotka on aiemmin käsitelty perusteellisesti" data-sv="Passar bäst för fordon som tidigare behandlats grundligt" data-en="Best suited for vehicles previously given a full detail">Soveltuu parhaiten ajoneuvoille, jotka on aiemmin käsitelty perusteellisesti</li>
+<li data-fi="Ulkopuoli: vaahtopesu, käsinpesu, renkaat & vanteet, kuivaus, suoja-aine" data-sv="Utvändigt: skumtvätt, handtvätt, däck & fälgar, torkning, skyddsmedel" data-en="Exterior: foam wash, hand wash, tyres & rims, drying, protection">Ulkopuoli: vaahtopesu, käsinpesu, renkaat & vanteet, kuivaus, suoja-aine</li>
+<li data-fi="Työaika n. 1–2 h" data-sv="Arbetstid ca 1–2 h" data-en="Work time approx. 1–2 h">Työaika n. 1–2 h</li>
+</ul></div></div>
+<a href="#yhteys" class="sv-cta" onclick="event.stopPropagation()" data-fi="Varaa aika" data-sv="Boka tid" data-en="Book now">Varaa aika <span>→</span></a>
+</article>
+<article class="sv srs sv-toggle" onclick="this.classList.toggle('open')">
+<div class="sv-top"><h3 class="sv-name" data-fi="Yksivaiheinen kiillotus" data-sv="Enstegspolering" data-en="Single-Stage Polish">Yksivaiheinen kiillotus</h3><div class="sv-price"><span class="sv-price-num" data-fi="alk. 250 €" data-sv="från 250 €" data-en="from €250">alk. 250 €</span><small data-fi="+alv" data-sv="+moms" data-en="+VAT">+alv</small></div></div>
+<p class="sv-desc" data-fi="Kiillotus ja suojauskäsittely. Palauttaa maalipinnan kiillon." data-sv="Polering och skyddsbehandling. Återställer lackens glans." data-en="Polish and protection treatment. Restores paint gloss.">Kiillotus ja suojauskäsittely. Palauttaa maalipinnan kiillon. <span class="sv-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></span></p>
+<div class="sv-expand"><div class="sv-detail"><ul>
+<li data-fi="Huolellinen käsinpesu, raudanpoisto ja esikäsittely" data-sv="Noggrann handtvätt, avjärning och förbehandling" data-en="Careful hand wash, iron removal and pre-treatment">Huolellinen käsinpesu, raudanpoisto ja esikäsittely</li>
+<li data-fi="Yksivaiheinen koneellinen kiillotus" data-sv="Enstegs maskinpolering" data-en="Single-stage machine polishing">Yksivaiheinen koneellinen kiillotus</li>
+<li data-fi="Suojaava vahakäsittely" data-sv="Skyddande vaxbehandling" data-en="Protective wax treatment">Suojaava vahakäsittely</li>
+<li data-fi="Suosituin kiillotuspalvelumme" data-sv="Vår mest populära poleringstjänst" data-en="Our most popular polishing service">Suosituin kiillotuspalvelumme</li>
+<li data-fi="Työaika 3–5 h" data-sv="Arbetstid 3–5 h" data-en="Work time 3–5 h">Työaika 3–5 h</li>
+</ul></div></div>
+<a href="#yhteys" class="sv-cta" onclick="event.stopPropagation()" data-fi="Varaa aika" data-sv="Boka tid" data-en="Book now">Varaa aika <span>→</span></a>
+</article>
+<article class="sv srs sv-toggle" onclick="this.classList.toggle('open')">
+<div class="sv-top"><h3 class="sv-name" data-fi="Monivaiheinen kiillotus" data-sv="Flerstegspolering" data-en="Multi-Stage Polish">Monivaiheinen kiillotus</h3><div class="sv-price"><span class="sv-price-num" data-fi="alk. 450 €" data-sv="från 450 €" data-en="from €450">alk. 450 €</span><small data-fi="+alv" data-sv="+moms" data-en="+VAT">+alv</small></div></div>
+<p class="sv-desc" data-fi="Vaativampaan maalipinnan kunnostukseen. Naarmujen ja hapettumien korjaus." data-sv="För krävande lackrestaurering. Korrigering av repor och oxidering." data-en="For demanding paint restoration. Scratch and oxidation repair.">Vaativampaan maalipinnan kunnostukseen. Naarmujen ja hapettumien korjaus. <span class="sv-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></span></p>
+<div class="sv-expand"><div class="sv-detail"><ul>
+<li data-fi="Useampivaiheinen koneellinen kiillotus" data-sv="Flerstegs maskinpolering" data-en="Multi-stage machine polishing">Useampivaiheinen koneellinen kiillotus</li>
+<li data-fi="Naarmujen ja hapettumien kevennys" data-sv="Reducering av repor och oxidering" data-en="Scratch and oxidation reduction">Naarmujen ja hapettumien kevennys</li>
+<li data-fi="Pitkäkestoinen suojaus" data-sv="Långvarig skyddsbehandling" data-en="Long-lasting protection">Pitkäkestoinen suojaus</li>
+<li data-fi="Työaika 5–7 h" data-sv="Arbetstid 5–7 h" data-en="Work time 5–7 h">Työaika 5–7 h</li>
+</ul></div></div>
+<a href="#yhteys" class="sv-cta" onclick="event.stopPropagation()" data-fi="Varaa aika" data-sv="Boka tid" data-en="Book now">Varaa aika <span>→</span></a>
+</article>
+<article class="sv srs sv-toggle" onclick="this.classList.toggle('open')">
+<div class="sv-top"><h3 class="sv-name" data-fi="Veneiden puhdistus & kiillotus" data-sv="Båtrengöring & polering" data-en="Boat Cleaning & Polish">Veneiden puhdistus & kiillotus</h3><div class="sv-price"><span class="sv-price-num" data-fi="Keväästä alkaen" data-sv="Från våren" data-en="Spring onwards">Keväästä alkaen</span></div></div>
+<p class="sv-desc" data-fi="Veneiden puhdistukset ja kiillotukset keväästä alkaen." data-sv="Båtrengöring och polering från våren." data-en="Boat cleaning and polishing from spring onwards.">Veneiden puhdistukset ja kiillotukset keväästä alkaen. <span class="sv-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></span></p>
+<div class="sv-expand"><div class="sv-detail"><ul>
+<li data-fi="Veneen ulkopinnan pesu ja kiillotus" data-sv="Utvändig tvätt och polering av båt" data-en="Exterior boat wash and polish">Veneen ulkopinnan pesu ja kiillotus</li>
+<li data-fi="Hinta ja työaika sovitaan veneen koon mukaan" data-sv="Pris och arbetstid avtalas efter båtens storlek" data-en="Price and time agreed based on boat size">Hinta ja työaika sovitaan veneen koon mukaan</li>
+</ul></div></div>
+<a href="#yhteys" class="sv-cta" onclick="event.stopPropagation()" data-fi="Pyydä tarjous" data-sv="Begär offert" data-en="Request quote">Pyydä tarjous <span>→</span></a>
+</article>
+<article class="sv srs sv-toggle" onclick="this.classList.toggle('open')">
+<div class="sv-top"><h3 class="sv-name" data-fi="Yritysasiakkaat" data-sv="Företagskunder" data-en="Business">Yritysasiakkaat</h3><div class="sv-price"><span class="sv-price-num" data-fi="Sopimushinta" data-sv="Avtalspris" data-en="Contract">Sopimushinta</span></div></div>
+<p class="sv-desc" data-fi="Säännölliset puhdistukset yritysten ajoneuvoille." data-sv="Regelbunden rengöring av företagsfordon." data-en="Regular cleaning for company vehicles.">Säännölliset puhdistukset yritysten ajoneuvoille. <span class="sv-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></span></p>
+<div class="sv-expand"><div class="sv-detail"><ul>
+<li data-fi="Jatkuva sopimus kaluston hoidosta" data-sv="Löpande avtal för fordonsflotta" data-en="Ongoing fleet maintenance agreement">Jatkuva sopimus kaluston hoidosta</li>
+<li data-fi="Aikataulut ja laskutus sovitaan erikseen" data-sv="Tidtabell och fakturering överenskoms separat" data-en="Schedule and billing agreed separately">Aikataulut ja laskutus sovitaan erikseen</li>
+<li data-fi="Nouto- ja palautuspalvelu tarvittaessa" data-sv="Hämtning och leverans vid behov" data-en="Pickup and delivery when needed">Nouto- ja palautuspalvelu tarvittaessa</li>
+</ul></div></div>
+<a href="#yhteys" class="sv-cta" onclick="event.stopPropagation()" data-fi="Pyydä tarjous" data-sv="Begär offert" data-en="Request quote">Pyydä tarjous <span>→</span></a>
+</article>
+</div>
+<p style="text-align:center;margin-top:1.5rem" class="sr"><a href="#yhteys" style="font-size:.92rem;color:var(--t3);transition:color .15s" data-fi="Etkö ole varma? Kerro meille autostasi, niin autamme. →" onmouseover="this.style.color='var(--redl)'" onmouseout="this.style.color='var(--t3)'" data-sv="Vet inte vad du behöver? Berätta om din bil →" data-en="Not sure what you need? Tell us about your car →">Etkö ole varma? Kerro meille autostasi, niin autamme. →</a></p>
+<div id="moreServices" style="display:none" class="sg" style="margin-top:10px">
+<!-- MORE SERVICES: Copy any service article block here to add more services -->
+</div>
+<p style="text-align:center;margin-top:.75rem" class="sr" id="showMoreWrap"><button onclick="document.getElementById('moreServices').style.display='grid';this.parentElement.style.display='none'" style="font-size:.88rem;color:var(--t3);background:none;border:1px solid var(--brd2);padding:.6rem 1.25rem;border-radius:4px;cursor:pointer;transition:all .15s;font-family:var(--ff)" onmouseover="this.style.borderColor='var(--redl)';this.style.color='var(--redl)'" onmouseout="this.style.borderColor='var(--brd2)';this.style.color='var(--t3)'" data-fi="Näytä lisää palveluita ▾" data-sv="Visa fler tjänster ▾" data-en="Show more services ▾">Näytä lisää palveluita ▾</button></p>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section class="sec sec-a" id="prosessi">
+<div class="sh sr">
+<div class="sl" data-fi="Prosessi" data-sv="Process" data-en="Process">Prosessi</div>
+<h2 class="st" data-fi="Neljä askelta." data-sv="Fyra steg." data-en="Four steps.">Neljä askelta.</h2>
+</div>
+<div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">01</div><div class="pc"><h3 data-fi="Ota yhteyttä" data-sv="Hör av dig" data-en="Get in touch">Ota yhteyttä <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Soita, laita WhatsAppia tai täytä lomake. Kerro mikä auto ja mitä toivot." data-sv="Ring, WhatsAppa eller fyll i formuläret. Berätta vilken bil och vad du vill ha." data-en="Call, WhatsApp or fill in the form. Tell us what car and what you want.">Soita, laita WhatsAppia tai täytä lomake. Kerro mikä auto ja mitä toivot.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Voit ottaa yhteyttä millä tavalla haluat. Vastaamme yleensä saman päivän aikana. Kerro auton merkki ja malli, niin ehdotamme sopivaa palvelua ja sovitaan aika." data-sv="Du kan kontakta oss hur du vill. Vi svarar vanligtvis samma dag. Berätta bilens märke, modell och vad du önskar, så föreslår vi en lämplig tjänst." data-en="Contact us however you like. We usually reply the same day. Tell us the car make, model and what you want and we'll suggest the right service.">Voit ottaa yhteyttä millä tavalla haluat. Vastaamme yleensä saman päivän aikana. Kerro auton merkki ja malli, niin ehdotamme sopivaa palvelua ja sovitaan aika.</span><!-- PHOTO: Add step photo here --><img src="" alt="" style="display:none"></div></div></div></div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">02</div><div class="pc"><h3 data-fi="Sopimus" data-sv="Avtal" data-en="Agreement">Sopimus <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Arvioimme auton kunnon yhdessä ja sovitaan palvelu ja hinta etukäteen." data-sv="Vi kollar bilens skick, bestämmer tjänst och pris. Inga överraskningar." data-en="We check the car, agree on service and price. No surprises.">Arvioimme auton kunnon yhdessä ja sovitaan palvelu ja hinta etukäteen.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Katsotaan auto yhdessä ja sovitaan mitä tehdään. Saat selkeän hinnan etukäteen. Ei piilokustannuksia eikä yllätyksiä laskussa." data-sv="Vi bedömer bilens skick och bestämmer tillsammans vad som görs. Du får ett tydligt pris i förväg. Inga dolda kostnader, inga överraskningar på fakturan." data-en="We assess the car's condition and agree together on what to do. You get a clear price upfront. No hidden costs, no surprises on the bill.">Katsotaan auto yhdessä ja sovitaan mitä tehdään. Saat selkeän hinnan etukäteen. Ei piilokustannuksia eikä yllätyksiä laskussa.</span><img src="/Users/alex/Documents/NHI Services Oy/pexels-shkrabaanthony-7144207.jpg" alt="" style=""></div></div></div></div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">03</div><div class="pc"><h3 data-fi="Käsittely" data-sv="Behandling" data-en="Treatment">Käsittely <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Teemme huolellista työtä ammattikalustolla ja -tuotteilla." data-sv="Arbetet görs med professionell utrustning. Vi dokumenterar allt." data-en="Work done with professional equipment. We document everything.">Teemme huolellista työtä ammattikalustolla ja -tuotteilla.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Käytämme ammattilaistason tuotteita ja kalustoa. Hoidamme jokaisen ajoneuvon yksilöllisesti ja valokuvaamme auton ennen ja jälkeen käsittelyn." data-sv="Vi använder professionella produkter och utrustning. Vi fotograferar bilen före och efter behandlingen. Så vet båda parter exakt vad som gjordes." data-en="We use professional-grade products and equipment. We photograph the car before and after treatment. So both parties know exactly what was done.">Käytämme ammattilaistason tuotteita ja kalustoa. Hoidamme jokaisen ajoneuvon yksilöllisesti ja valokuvaamme auton ennen ja jälkeen käsittelyn.</span><img src="/Users/alex/Documents/NHI Services Oy/IMG_3092.jpg" alt="" style=""></div></div></div></div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">04</div><div class="pc"><h3 data-fi="Luovutus" data-sv="Klart" data-en="Handover">Luovutus <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Käydään lopputulos läpi yhdessä. Tyytyväisyystakuu jokaiseen käsittelyyn." data-sv="Vi går igenom resultatet. Om du inte är nöjd, fixar vi det." data-en="We review the result. If you're not satisfied, we fix it.">Käydään lopputulos läpi yhdessä. Tyytyväisyystakuu jokaiseen käsittelyyn.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Käymme lopputuloksen läpi yhdessä autolla. Jos jokin kohta ei miellytä, korjaamme sen saman tien. Sinun ei tarvitse olla epävarma." data-sv="Vi går igenom slutresultatet tillsammans vid bilen. Om något inte passar, fixar vi det direkt. Nöjdhetsgaranti på varje behandling." data-en="We review the final result together at the car. If anything isn't right, we fix it on the spot. Satisfaction guarantee on every treatment.">Käymme lopputuloksen läpi yhdessä autolla. Jos jokin kohta ei miellytä, korjaamme sen saman tien. Sinun ei tarvitse olla epävarma.</span><img src="/Users/alex/Documents/NHI Services Oy/IMG_3028.jpg" alt="" style=""></div></div></div></div>
+</div>
+<div class="ba-banner sr" data-fi-content="true" data-sv-content="true" data-en-content="true">
+<div class="ba-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+<div class="ba-text">
+<h4 data-fi="Ennen ja jälkeen -dokumentointi" data-sv="Före och efter-dokumentation" data-en="Before & after documentation">Ennen ja jälkeen -dokumentointi</h4>
+<p data-fi="Valokuvaamme jokaisen auton ennen käsittelyä ja sen jälkeen. Läpinäkyvyyttä ja turvaa molemmille osapuolille." data-sv="Vi fotograferar varje bil före och efter behandling. Transparens och trygghet för båda parter." data-en="We photograph every car before and after treatment. Transparency and security for both parties.">Valokuvaamme jokaisen auton ennen käsittelyä ja sen jälkeen. Läpinäkyvyyttä ja turvaa molemmille osapuolille.</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVIEWS -->
+<section class="sec sa" id="arviot">
+<div class="sh sr">
+<div class="sl" data-fi="Arviot" data-sv="Recensioner" data-en="Reviews">Arviot</div>
+<h2 class="st" data-fi="Mitä asiakkaat sanovat." data-sv="Vad kunderna säger." data-en="What customers say.">Mitä asiakkaat sanovat.</h2>
+</div>
+<div class="rv-g sr">
+<!-- REVIEWS: Replace with real Google Reviews. Copy blocks to add more. -->
+<div class="rv">
+<div class="rv-head"><div class="rv-av">M</div><div class="rv-info"><div class="rv-name">Mika T.</div><div class="rv-meta">2 kuukautta sitten</div></div></div>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-text">Todella hyvää työtä, auto näytti paremmalta kuin uutena. Suosittelen!</p>
+<div class="rv-goog"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11.96 11.96 0 001 12c0 1.94.46 3.77 1.18 5.39l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google-arvostelu</div>
+</div>
+<div class="rv">
+<div class="rv-head"><div class="rv-av">A</div><div class="rv-info"><div class="rv-name">Anna K.</div><div class="rv-meta">1 kuukausi sitten</div></div></div>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-text">Kiillotus tehtiin huolella ja auto näyttää kuin uudelta. Suosittelen lämpimästi!</p>
+<div class="rv-goog"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11.96 11.96 0 001 12c0 1.94.46 3.77 1.18 5.39l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google-arvostelu</div>
+</div>
+<div class="rv">
+<div class="rv-head"><div class="rv-av">J</div><div class="rv-info"><div class="rv-name">Juha P.</div><div class="rv-meta">3 viikkoa sitten</div></div></div>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-text">Sisäpesu oli perusteellinen. Erityiskiitos joustavasta aikataulusta ja reilusta hinnasta.</p>
+<div class="rv-goog"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A11.96 11.96 0 001 12c0 1.94.46 3.77 1.18 5.39l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google-arvostelu</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:1rem" class="sr"><a href="https://www.google.com/maps/place/NHI+Services" target="_blank" rel="noopener" style="font-size:.88rem;color:var(--t3);transition:color .15s" onmouseover="this.style.color='var(--redl)'" onmouseout="this.style.color='var(--t3)'" data-fi="Katso lisää arvioita Googlessa →" data-sv="Se fler recensioner på Google →" data-en="See more reviews on Google →">Katso lisää arvioita Googlessa →</a></p>
+</section>
+
+<div class="divider"></div>
+
+<!-- GALLERY -->
+<section class="sec" id="galleria">
+<div class="sh sr">
+<div class="sl" data-fi="Työnäytteet" data-sv="Galleri" data-en="Our work">Työnäytteet</div>
+<h2 class="st" data-fi="Tulokset puhuvat puolestaan." data-sv="Resultaten talar för sig själva." data-en="Results speak for themselves.">Tulokset puhuvat puolestaan.</h2>
+</div>
+<div class="ig-head sr"><span style="font-size:1.1rem">📸</span> <span style="font-size:.9rem;font-weight:600;color:var(--t2)"><a href="https://instagram.com/nhiservices" target="_blank" rel="noopener">@nhiservices</a></span></div>
+<div class="gg sr">
+<!-- GALLERY: Replace src with Instagram/work photos. When img has src, the "IG" text hides automatically -->
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3035.jpg" alt="Work 1" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3183.jpg" alt="Work 2" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3229.jpg" alt="Work 3" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3235.jpg" alt="Work 4" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3254.jpg" alt="Work 5" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3261.jpg" alt="Work 6" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3263.jpg" alt="Work 7" style=""><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="/Users/alex/Documents/NHI Services Oy/IMG_3287.jpg" alt="Work 8" style=""><span class="gp">IG</span></div>
+</div>
+<div class="gf sr"><a href="https://instagram.com/nhiservices" target="_blank" rel="noopener" data-fi="Seuraa @nhiservices Instagramissa →" data-sv="Följ @nhiservices på Instagram →" data-en="Follow @nhiservices on Instagram →">Seuraa @nhiservices Instagramissa →</a></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="sec sec-a" id="yhteys">
+<div class="sh sr">
+<div class="sl" data-fi="Yhteystiedot" data-sv="Kontakt" data-en="Contact">Yhteystiedot</div>
+<h2 class="st" data-fi="Ota yhteyttä, niin jutellaan." data-sv="Hör av dig, så pratar vi." data-en="Get in touch. We'll get back to you.">Ota yhteyttä, niin jutellaan.</h2>
+</div>
+<div class="cb sr">
+<div>
+<div class="cg">
+<div class="cc" style="cursor:default"><span class="cc-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span><span class="cc-info"><span class="cc-lb" data-fi="Soita meille" data-sv="Ring oss" data-en="Call us">Soita meille</span><span class="cc-phones"><a href="tel:+358409342100">040 934 2100</a><a href="tel:+358503847152">050 384 7152</a></span></span></div>
+<a href="mailto:nhiservices@nhis.fi" class="cc"><span class="cc-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></span><span class="cc-info"><span class="cc-lb" data-fi="Sähköposti" data-sv="E-post" data-en="Email">Sähköposti</span><span class="cc-vl">nhiservices@nhis.fi</span></span></a>
+
+<div class="cc" style="cursor:default;background:transparent;border-color:var(--brd)" style="cursor:default;background:transparent;border-color:var(--brd)"><span class="cc-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="cc-info"><span class="cc-lb" data-fi="Avoinna" data-sv="Öppet" data-en="Open">Avoinna</span><span class="cc-vl" style="color:var(--t2)" data-fi="Ma–Su 8–18" data-sv="Mån–Sön 8–18" data-en="Mon–Sun 8–18">Ma–Su 8–18</span></span></div>
+</div>
+<div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.5!2d21.744382!3d61.4683622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46890b2cf7bb6027%3A0x6afaf2130ce0d6bc!2sNHI%20Services%20Oy!5e0!3m2!1sfi!2sfi!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NHI Services sijainti"></iframe></div>
+</div>
+<div class="cb-right">
+<form class="fm" id="cForm">
+<div class="fr">
+<div class="ff"><label class="fl" for="fn" data-fi="Nimi" data-sv="Namn" data-en="Name">Nimi</label><input id="fn" type="text" class="fi" required></div>
+<div class="ff"><label class="fl" for="fp" data-fi="Puhelin" data-sv="Telefon" data-en="Phone">Puhelin</label><input id="fp" type="tel" class="fi" placeholder="+358"></div>
+</div>
+<div class="ff"><label class="fl" for="fe" data-fi="Sähköposti" data-sv="E-post" data-en="Email">Sähköposti</label><input id="fe" type="email" class="fi" placeholder="nimi@esimerkki.fi"></div>
+<div class="fr">
+<div class="ff"><label class="fl" for="fb" data-fi="Auton merkki" data-sv="Bilmärke" data-en="Car make">Auton merkki</label><input id="fb" type="text" class="fi" placeholder="esim. BMW"></div>
+<div class="ff"><label class="fl" for="fmod" data-fi="Malli ja vuosi" data-sv="Modell och år" data-en="Model & year">Malli ja vuosi</label><input id="fmod" type="text" class="fi" placeholder="esim. 3-sarja 2021"></div>
+</div>
+<div class="ff">
+<label class="fl" for="fs" data-fi="Palvelu" data-sv="Tjänst" data-en="Service">Palvelu</label>
+<select id="fs" class="fsl">
+<option value="" disabled selected data-fi="Valitse palvelu" data-sv="Välj tjänst" data-en="Select service">Valitse palvelu</option>
+<option value="d" data-fi="Perusteellinen detailaus" data-sv="Grundlig detailing" data-en="Full Detailing">Perusteellinen detailaus</option>
+<option value="y" data-fi="Ylläpitosiivous" data-sv="Underhållsrengöring" data-en="Maintenance Clean">Ylläpitosiivous</option>
+<option value="k1" data-fi="Yksivaiheinen kiillotus" data-sv="Enstegspolering" data-en="Single-Stage Polish">Yksivaiheinen kiillotus</option>
+<option value="k2" data-fi="Monivaiheinen kiillotus" data-sv="Flerstegspolering" data-en="Multi-Stage Polish">Monivaiheinen kiillotus</option>
+<option value="v" data-fi="Veneiden puhdistus" data-sv="Båtrengöring" data-en="Boat Cleaning">Veneiden puhdistus</option>
+<option value="yr" data-fi="Yrityspalvelu" data-sv="Företagstjänst" data-en="Business">Yrityspalvelu</option>
+<option value="m" data-fi="Muu / en tiedä vielä" data-sv="Annat / vet inte ännu" data-en="Other / not sure yet">Muu / en tiedä vielä</option>
+</select>
+</div>
+<div class="ff"><label class="fl" for="fm2" data-fi="Lisätiedot" data-sv="Mer info" data-en="Additional info">Lisätiedot</label><textarea id="fm2" class="ft" data-fi-ph="Kerro vapaasti lisää, esim. auton kunto, toiveet ja aikataulu." data-sv-ph="Berätta fritt, t.ex. bilens skick, önskemål och tidtabell." data-en-ph="Tell us more, e.g. car condition, wishes and timeline." placeholder="Kerro vapaasti lisää, esim. auton kunto, toiveet ja aikataulu."></textarea></div>
+<button type="submit" class="btn bp" id="subBtn"><span class="btn-tx" data-fi="Lähetä" data-sv="Skicka" data-en="Send">Lähetä</span> <span class="ba">→</span></button>
+</form>
+</div>
+</div>
+</section>
+
+<footer class="foot" role="contentinfo">
+<div class="foot-l">© <span id="yr"></span> NHI Services Oy</div>
+<div class="foot-r"><a href="https://instagram.com/nhiservices" target="_blank" rel="noopener">Instagram</a><span style="color:var(--t3);margin:0 .75rem;opacity:.5">|</span><a href="https://www.facebook.com/people/Nhiservices-Oy/61588454875109/" target="_blank" rel="noopener">Facebook</a></div>
+</footer>
+<div class="end-glow" aria-hidden="true"></div>
+
+<a href="https://wa.me/358409342100" target="_blank" rel="noopener" class="waf" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+</a>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const eg=document.querySelector('.end-glow');
+if(eg){const bn=document.querySelector('.bn');const ft=document.querySelector('.foot');window.addEventListener('scroll',()=>{const sh=document.documentElement.scrollHeight;const st=window.scrollY+window.innerHeight;const atEnd=st>sh-250;eg.style.opacity=atEnd?'1':'0';if(bn)bn.classList.toggle('glow-on',atEnd);if(ft)ft.classList.toggle('glow-on',atEnd)},{passive:true})}
+// Smart map link: Apple Maps on iOS, Google Maps elsewhere
+// Smart map link for any map links
+
+// Auto-show images when src is set
+window.addEventListener('load',()=>{
+document.body.classList.add('ld');
+// Rain streaks
+const rc=document.getElementById('heroRain');
+if(rc){for(let i=0;i<8;i++){const s=document.createElement('div');s.classList.add('streak');s.style.left=(5+Math.random()*90)+'%';s.style.animationDuration=(1.2+Math.random()*2)+'s';s.style.animationDelay=(Math.random()*3)+'s';s.style.opacity=(.12+Math.random()*.22).toFixed(2);rc.appendChild(s)}}
+// Auto-show images: set src on any .tm-img or .gc-img and the placeholder hides
+document.querySelectorAll('.tm-img,.gc-img').forEach(img=>{
+if(img.getAttribute('src')){img.style.display='block';const ph=img.nextElementSibling;if(ph)ph.style.display='none'}
+});
+});
+const o1=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');o1.unobserve(x.target)}}),{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.sr').forEach(e=>o1.observe(e));
+const o2=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){const p=x.target.closest('.sg,section');if(p){const s=p.querySelectorAll('.srs:not(.v)');s.forEach((el,i)=>setTimeout(()=>{el.classList.add('v');o2.unobserve(el)},i*110))}}}),{threshold:.05});
+document.querySelectorAll('.srs').forEach(e=>o2.observe(e));
+document.getElementById('cForm').addEventListener('submit',e=>{e.preventDefault();const b=document.getElementById('subBtn');b.querySelector('.btn-tx').textContent={fi:'Lähetetty ✓',sv:'Skickat ✓',en:'Sent ✓'}[cL]||'Lähetetty ✓';b.querySelector('.ba').textContent='';b.style.background='var(--grn)';b.style.boxShadow='0 2px 0 var(--grnd)';b.disabled=true});
+// Service numbering
+// Auto-hide 'show more' if 6 or fewer services
+const svAll=document.querySelectorAll('.sg > .sv');
+const moreWrap=document.getElementById('showMoreWrap');
+if(moreWrap && svAll.length<=6) moreWrap.style.display='none';
+// Service numbering
+document.querySelectorAll('.sv').forEach((sv,i)=>{const n=document.createElement('span');n.style.cssText='font-family:var(--data);font-size:.72rem;font-weight:500;color:var(--amb);opacity:.6;margin-bottom:.1rem;letter-spacing:.04em;display:block';n.textContent=String(i+1).padStart(2,'0');sv.insertBefore(n,sv.firstChild)});
+// Nav active state on scroll
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.tn-links a, .bn-i');
+const obs3=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){const id=en.target.id;navLinks.forEach(l=>{const href=l.getAttribute('href');if(href){const hid=href.replace('#','');l.classList.toggle('active',hid===id||(false))}})}})},{threshold:.1,rootMargin:'-52px 0px -50% 0px'});
+sections.forEach(s=>obs3.observe(s));
+let cL='fi';
+function setLang(l){cL=l;document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent.trim().toLowerCase()===l));document.querySelectorAll('[data-'+l+']').forEach(el=>{const v=el.getAttribute('data-'+l);if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=v;else if(el.classList.contains('btn-tx')||el.tagName==='OPTION')el.textContent=v;else if(v.includes('<'))el.innerHTML=v;else{const kids=[...el.children];if(kids.length){const tn=document.createTextNode(v+' ');while(el.firstChild&&el.firstChild.nodeType===3)el.removeChild(el.firstChild);el.insertBefore(tn,el.firstChild)}else{el.textContent=v}}});document.querySelectorAll('[data-'+l+'-ph]').forEach(el=>{el.placeholder=el.getAttribute('data-'+l+'-ph')});document.documentElement.lang=l==='sv'?'sv':l==='en'?'en':'fi'}
+</script>
+</body>
+</html>
