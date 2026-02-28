@@ -35,8 +35,8 @@
   --sab:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(52px + env(safe-area-inset-top,0px));background:var(--bg);color-scheme:dark;overflow-x:hidden}
-body{font-family:var(--ff);background:var(--bg);color:var(--t2);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw;padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+html{scroll-behavior:smooth;overscroll-behavior-y:contain;scroll-padding-top:calc(52px + env(safe-area-inset-top,0px));background:var(--bg);color-scheme:dark;overflow-x:hidden}
+body{font-family:var(--ff);background:var(--bg);color:var(--t2);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.015'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4}
 ::selection{background:var(--redl);color:#fff}
 *{background-color:transparent}
@@ -53,8 +53,8 @@ a{color:inherit;text-decoration:none}
 .tn-links a.active{color:var(--t1)!important}
 .tn-links a.active::after{content:'';display:block;width:100%;height:2px;background:var(--redl);margin-top:2px;border-radius:1px}
 .bn-i.active .bn-ic{stroke:var(--t1)!important}.bn-i.active .bn-lb{color:var(--t1)!important}
-.tn{position:fixed;top:0;left:0;right:0;z-index:900;height:calc(52px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;padding-left:1.5rem;padding-right:1.5rem;background:rgba(8,8,8,.82);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-bottom:none;overflow:visible;transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 0 rgba(255,255,255,.06),0 4px 20px rgba(0,0,0,.4),0 1px 8px rgba(255,255,255,.03)}
-.tn.nav-hidden{transform:translateY(calc(-100% - 20px))}
+.tn{position:fixed;top:0;left:0;right:0;z-index:900;height:calc(52px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:space-between;padding-left:1.5rem;padding-right:1.5rem;background:#080808;border-bottom:none;overflow:visible;transition:transform .5s cubic-bezier(.25,.1,.25,1);box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 24px rgba(0,0,0,.5),0 2px 8px rgba(255,255,255,.04)}
+.tn.nav-hidden{transform:translateY(-200%)}
 .tn::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(255,255,255,.08);z-index:0}
 
 .tn-logo{display:flex;align-items:center;gap:.5rem}
@@ -74,8 +74,8 @@ a{color:inherit;text-decoration:none}
 .lb.on{color:var(--t1);background:var(--bg)}.lb:hover:not(.on){color:var(--t2)}
 
 /* ── NAV BOTTOM ── */
-.bn{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;height:calc(56px + env(safe-area-inset-bottom,0px) + 34px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 34px);padding-top:8px;background:rgba(8,8,8,.92);backdrop-filter:blur(32px) saturate(180%);-webkit-backdrop-filter:blur(32px) saturate(180%);border-top:1px solid rgba(255,255,255,.08);justify-content:space-around;align-items:flex-start;transition:background .8s ease,border-color .8s ease}
-.bn.glow-on{border-top-color:rgba(217,48,37,.3);background:rgba(120,18,14,.35)}
+.bn{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;height:calc(56px + env(safe-area-inset-bottom,0px) + 40px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 40px);padding-top:8px;background:#080808;border-top:1px solid rgba(255,255,255,.08);justify-content:space-around;align-items:flex-start;transition:background .8s ease,border-color .8s ease}
+.bn.glow-on{border-top-color:rgba(217,48,37,.3);background:rgba(80,12,10,.95)}
 .bn.glow-on .bn-ic{stroke:var(--t1)!important}
 .bn.glow-on .bn-lb{color:var(--t1)!important}
 .bn-i{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 12px;background:none;border:none;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
@@ -261,10 +261,10 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 .ft{resize:vertical;min-height:80px}
 
 /* ── MAP ── */
-.map-addr{display:flex;align-items:center;gap:.4rem;padding:.6rem .85rem;font-size:.82rem;color:var(--t2);transition:color .15s}
+.map-addr{display:flex;align-items:center;gap:.4rem;padding:.65rem .85rem;font-size:.82rem;color:var(--t2);transition:color .15s}
 .map-addr:hover{color:var(--redl)}
 .map-addr svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0}
-.map-wrap{margin-top:.5rem;border-radius:8px;overflow:hidden;border:none;flex:1;margin-bottom:0}
+.map-wrap{margin-top:0;border-radius:8px;overflow:hidden;border:none;flex:1;margin-bottom:0}
 .map-wrap iframe{width:100%;height:100%;min-height:200px;border:0;filter:invert(90%) hue-rotate(180deg) brightness(.95) contrast(.9)}
 
 /* ── WHATSAPP ── */
@@ -274,7 +274,7 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 .waf svg{width:26px;height:26px;fill:#fff}
 
 /* ── FOOTER ── */
-.end-glow{position:fixed;bottom:0;left:0;right:0;height:300px;background:linear-gradient(to top,rgba(194,35,24,.15) 0%,rgba(194,35,24,.07) 20%,rgba(194,35,24,.03) 50%,transparent 85%);pointer-events:none;z-index:799;opacity:0;transition:opacity 1s ease}
+.end-glow{position:fixed;bottom:0;left:0;right:0;height:300px;background:linear-gradient(to top,rgba(194,35,24,.18) 0%,rgba(194,35,24,.1) 20%,rgba(194,35,24,.04) 50%,transparent 85%);pointer-events:none;z-index:799;opacity:0;transition:opacity 1s ease;padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(max-width:639px){.foot{flex-direction:column;gap:.5rem}.foot-r{order:-1}
 .team-bottom{flex-direction:column!important}.team-partner{margin-left:0!important;width:100%!important}}
 .foot{padding:1.25rem 1.5rem;border-top:none;background:var(--bg);position:relative;z-index:1;transition:color .8s ease;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
@@ -282,7 +282,7 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 .foot-r{display:flex;gap:1.25rem}
 .foot-r a{font-size:.85rem;font-weight:500;color:var(--t3);transition:color .15s}
 .foot-r a:hover{color:var(--t1)}
-.foot.glow-on{animation:glowPulse 3s ease-in-out infinite}
+.foot.glow-on{background:rgba(80,12,10,.6)}
 .foot.glow-on .foot-l,.foot.glow-on .foot-r a{color:var(--t2);transition:color .8s ease}
 
 /* ── SCROLL ── */
@@ -309,7 +309,7 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 
 <nav class="tn" role="navigation" aria-label="Main">
 <a href="#" class="tn-logo">
-<img class="tn-logo-img" src="nhiservices.svg" alt="NHI Services">
+<img class="tn-logo-img" src="nhiservices.svg" alt="NHI Services" onerror="this.src='';this.style.display='none'">
 <span class="tn-logo-txt"><b>NHI</b> Services</span>
 </a>
 <div class="tn-r">
@@ -337,7 +337,7 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 <!-- HERO -->
 <section class="hero" id="hero">
 <div class="hero-bg"></div>
-<img class="hero-car" src="IMG_3198-Photoroom.png" alt="">
+<img class="hero-car" src="IMG_3198-Photoroom.png" onerror="this.style.display='none'" alt="">
 <p class="hero-tag" data-fi="Premium Detailing" data-sv="Premium Detailing" data-en="Premium Detailing">Premium Detailing</p>
 <h1 data-fi="Autosi ansaitsee&lt;br&gt;huolenpitoa." data-sv="Din bil förtjänar&lt;br&gt;omsorg." data-en="Your car deserves&lt;br&gt;care.">Autosi ansaitsee<br>huolenpitoa.</h1>
 <p class="hero-sub" data-fi="Puhdistus, kiillotus ja suojauskäsittelyt ajoneuvoille. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Hoidamme myös veneet." data-sv="Rengöring, polering och skyddsbehandlingar för fordon. Ingen snabbtvätt, utan noggrant hantverk och finish. Vi tar hand om båtar också." data-en="Vehicle cleaning, polishing and protection. No quick wash. Careful craftsmanship. Boats too.">Puhdistus, kiillotus ja suojauskäsittelyt ajoneuvoille. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Hoidamme myös veneet.</p>
@@ -356,14 +356,14 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 <h2 class="st" data-fi="Nordquist. Haaslahti. Ingves." data-sv="Nordquist. Haaslahti. Ingves." data-en="Nordquist. Haaslahti. Ingves.">Nordquist. Haaslahti. Ingves.</h2>
 </div>
 <div class="team-g sr">
-<div class="tm"><div class="tm-ph"><img class="tm-img" src="joateam.svg" alt="Otto Nordquist" style="display:none"><div class="tm-circ"></div></div><div class="tm-nfo"><div class="tm-n">Otto <span class="tm-ln">Nordquist</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div></div>
-<div class="tm"><div class="tm-ph"><img class="tm-img" src="joateam.svg" alt="Eemeli Haaslahti" style="display:none"><div class="tm-circ"></div></div><div class="tm-nfo"><div class="tm-n">Eemeli <span class="tm-ln">Haaslahti</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div></div>
-<div class="tm"><div class="tm-ph"><img class="tm-img" src="joateam.svg" alt="Joa Ingves" style="display:none"><div class="tm-circ"></div></div><div class="tm-nfo"><div class="tm-n">Joa <span class="tm-ln">Ingves</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div></div>
+<div class="tm"><div class="tm-ph"><img class="tm-img" src="joateam.svg" alt="Otto Nordquist" style="display:none" onerror="this.style.display='none';this.nextElementSibling.style.display=''"><div class="tm-circ"></div></div><div class="tm-nfo"><div class="tm-n">Otto <span class="tm-ln">Nordquist</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div></div>
+<div class="tm"><div class="tm-ph"><img class="tm-img" src="joateam.svg" alt="Eemeli Haaslahti" style="display:none" onerror="this.style.display='none';this.nextElementSibling.style.display=''"><div class="tm-circ"></div></div><div class="tm-nfo"><div class="tm-n">Eemeli <span class="tm-ln">Haaslahti</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div></div>
+<div class="tm"><div class="tm-ph"><img class="tm-img" src="joateam.svg" alt="Joa Ingves" style="display:none" onerror="this.style.display='none';this.nextElementSibling.style.display=''"><div class="tm-circ"></div></div><div class="tm-nfo"><div class="tm-n">Joa <span class="tm-ln">Ingves</span></div><div class="tm-r" data-fi="Perustaja" data-sv="Grundare" data-en="Founder">Perustaja</div></div></div>
 </div>
 <div class="team-bottom sr" style="display:flex;gap:2rem;align-items:flex-start;margin-top:1.5rem">
 <p class="team-txt" style="flex:1" data-fi="Kolme nuorta yrittäjää, pitkä alan harrastustausta ja koulutus ajoneuvojen pintakäsittelyyn. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Teemme huolellista työtä ja hoidamme jokaisen ajoneuvon yksilöllisesti. &lt;b&gt;N&lt;/b&gt;ordquist, &lt;b&gt;H&lt;/b&gt;aaslahti, &lt;b&gt;I&lt;/b&gt;ngves. Siitä se nimi tulee." data-sv="Tre unga företagare med lång erfarenhet och utbildning inom ytbehandling av fordon. Ingen snabbtvätt, utan noggrant hantverk och finish. Vi gör omsorgsfullt arbete och tar hand om varje fordon individuellt. &lt;b&gt;N&lt;/b&gt;ordquist, &lt;b&gt;H&lt;/b&gt;aaslahti, &lt;b&gt;I&lt;/b&gt;ngves. Därav namnet." data-en="Three young entrepreneurs with extensive experience and training in vehicle surface treatment. No quick wash. Careful craftsmanship and finishing. We do meticulous work and treat every vehicle individually. &lt;b&gt;N&lt;/b&gt;ordquist, &lt;b&gt;H&lt;/b&gt;aaslahti, &lt;b&gt;I&lt;/b&gt;ngves. That's where the name comes from.">Kolme nuorta yrittäjää, pitkä alan harrastustausta ja koulutus ajoneuvojen pintakäsittelyyn. Ei pikapesua, vaan huolellista käsityötä ja viimeistelyä. Teemme huolellista työtä ja hoidamme jokaisen ajoneuvon yksilöllisesti. <b>N</b>ordquist, <b>H</b>aaslahti, <b>I</b>ngves. Siitä se nimi tulee.</p>
 <a href="https://www.cartec.fi" target="_blank" rel="noopener" class="team-partner" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:1.25rem 1.5rem;border:1px solid var(--brd);border-radius:6px;background:var(--bg2);flex-shrink:0;margin-left:auto;min-height:120px;min-width:180px;text-decoration:none;transition:border-color .15s">
-<img src="Square_Logo_e805b9ab-aa74-41e0-afd6-ff5cb1a3b9ba_592x.jpg-Photoroom.png" alt="Cartec" style="height:72px;width:auto;opacity:.7;filter:brightness(1.2)" class="cartec-logo">
+<img src="Square_Logo_e805b9ab-aa74-41e0-afd6-ff5cb1a3b9ba_592x.jpg-Photoroom.png" alt="Cartec" style="height:72px;width:auto;opacity:.7;filter:brightness(1.2)" class="cartec-logo" onerror="this.style.display='none'">
 <span style="font-size:.68rem;color:var(--t2);font-family:var(--mono);letter-spacing:.04em;white-space:nowrap;margin-top:auto" data-fi="Virallinen Cartec-kumppani" data-sv="Officiell Cartec-partner" data-en="Official Cartec partner">Virallinen Cartec-kumppani</span>
 </a>
 </div>
@@ -459,9 +459,9 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 </div>
 <div>
 <div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">01</div><div class="pc"><h3 data-fi="Ota yhteyttä" data-sv="Hör av dig" data-en="Get in touch">Ota yhteyttä <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Soita, laita WhatsAppia tai täytä lomake. Kerro mikä auto ja mitä toivot." data-sv="Ring, WhatsAppa eller fyll i formuläret. Berätta vilken bil och vad du vill ha." data-en="Call, WhatsApp or fill in the form. Tell us what car and what you want.">Soita, laita WhatsAppia tai täytä lomake. Kerro mikä auto ja mitä toivot.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Voit ottaa yhteyttä millä tavalla haluat. Vastaamme yleensä saman päivän aikana. Kerro auton merkki ja malli, niin ehdotamme sopivaa palvelua ja sovitaan aika." data-sv="Du kan kontakta oss hur du vill. Vi svarar vanligtvis samma dag. Berätta bilens märke, modell och vad du önskar, så föreslår vi en lämplig tjänst." data-en="Contact us however you like. We usually reply the same day. Tell us the car make, model and what you want and we'll suggest the right service.">Voit ottaa yhteyttä millä tavalla haluat. Vastaamme yleensä saman päivän aikana. Kerro auton merkki ja malli, niin ehdotamme sopivaa palvelua ja sovitaan aika.</span><img src="" alt="" style="display:none"></div></div></div></div>
-<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">02</div><div class="pc"><h3 data-fi="Sopimus" data-sv="Avtal" data-en="Agreement">Sopimus <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Arvioimme auton kunnon yhdessä ja sovitaan palvelu ja hinta etukäteen." data-sv="Vi kollar bilens skick, bestämmer tjänst och pris. Inga överraskningar." data-en="We check the car, agree on service and price. No surprises.">Arvioimme auton kunnon yhdessä ja sovitaan palvelu ja hinta etukäteen.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Katsotaan auto yhdessä ja sovitaan mitä tehdään. Saat selkeän hinnan etukäteen. Ei piilokustannuksia eikä yllätyksiä laskussa." data-sv="Vi bedömer bilens skick och bestämmer tillsammans vad som görs. Du får ett tydligt pris i förväg. Inga dolda kostnader, inga överraskningar på fakturan." data-en="We assess the car's condition and agree together on what to do. You get a clear price upfront. No hidden costs, no surprises on the bill.">Katsotaan auto yhdessä ja sovitaan mitä tehdään. Saat selkeän hinnan etukäteen. Ei piilokustannuksia eikä yllätyksiä laskussa.</span><img src="pexels-shkrabaanthony-7144207.jpg" alt=""></div></div></div></div>
-<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">03</div><div class="pc"><h3 data-fi="Käsittely" data-sv="Behandling" data-en="Treatment">Käsittely <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Teemme huolellista työtä ammattikalustolla ja -tuotteilla." data-sv="Arbetet görs med professionell utrustning. Vi dokumenterar allt." data-en="Work done with professional equipment. We document everything.">Teemme huolellista työtä ammattikalustolla ja -tuotteilla.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Käytämme ammattilaistason tuotteita ja kalustoa. Hoidamme jokaisen ajoneuvon yksilöllisesti ja valokuvaamme auton ennen ja jälkeen käsittelyn." data-sv="Vi använder professionella produkter och utrustning. Vi fotograferar bilen före och efter behandlingen. Så vet båda parter exakt vad som gjordes." data-en="We use professional-grade products and equipment. We photograph the car before and after treatment. So both parties know exactly what was done.">Käytämme ammattilaistason tuotteita ja kalustoa. Hoidamme jokaisen ajoneuvon yksilöllisesti ja valokuvaamme auton ennen ja jälkeen käsittelyn.</span><img src="IMG_3092.jpg" alt=""></div></div></div></div>
-<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">04</div><div class="pc"><h3 data-fi="Luovutus" data-sv="Klart" data-en="Handover">Luovutus <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Käydään lopputulos läpi yhdessä. Tyytyväisyystakuu jokaiseen käsittelyyn." data-sv="Vi går igenom resultatet. Om du inte är nöjd, fixar vi det." data-en="We review the result. If you're not satisfied, we fix it.">Käydään lopputulos läpi yhdessä. Tyytyväisyystakuu jokaiseen käsittelyyn.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Käymme lopputuloksen läpi yhdessä autolla. Jos jokin kohta ei miellytä, korjaamme sen saman tien. Sinun ei tarvitse olla epävarma." data-sv="Vi går igenom slutresultatet tillsammans vid bilen. Om något inte passar, fixar vi det direkt. Nöjdhetsgaranti på varje behandling." data-en="We review the final result together at the car. If anything isn't right, we fix it on the spot. Satisfaction guarantee on every treatment.">Käymme lopputuloksen läpi yhdessä autolla. Jos jokin kohta ei miellytä, korjaamme sen saman tien. Sinun ei tarvitse olla epävarma.</span><img src="IMG_3028.jpg" alt=""></div></div></div></div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">02</div><div class="pc"><h3 data-fi="Sopimus" data-sv="Avtal" data-en="Agreement">Sopimus <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Arvioimme auton kunnon yhdessä ja sovitaan palvelu ja hinta etukäteen." data-sv="Vi kollar bilens skick, bestämmer tjänst och pris. Inga överraskningar." data-en="We check the car, agree on service and price. No surprises.">Arvioimme auton kunnon yhdessä ja sovitaan palvelu ja hinta etukäteen.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Katsotaan auto yhdessä ja sovitaan mitä tehdään. Saat selkeän hinnan etukäteen. Ei piilokustannuksia eikä yllätyksiä laskussa." data-sv="Vi bedömer bilens skick och bestämmer tillsammans vad som görs. Du får ett tydligt pris i förväg. Inga dolda kostnader, inga överraskningar på fakturan." data-en="We assess the car's condition and agree together on what to do. You get a clear price upfront. No hidden costs, no surprises on the bill.">Katsotaan auto yhdessä ja sovitaan mitä tehdään. Saat selkeän hinnan etukäteen. Ei piilokustannuksia eikä yllätyksiä laskussa.</span><img src="pexels-shkrabaanthony-7144207.jpg" alt="" onerror="this.style.display='none'"></div></div></div></div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">03</div><div class="pc"><h3 data-fi="Käsittely" data-sv="Behandling" data-en="Treatment">Käsittely <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Teemme huolellista työtä ammattikalustolla ja -tuotteilla." data-sv="Arbetet görs med professionell utrustning. Vi dokumenterar allt." data-en="Work done with professional equipment. We document everything.">Teemme huolellista työtä ammattikalustolla ja -tuotteilla.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Käytämme ammattilaistason tuotteita ja kalustoa. Hoidamme jokaisen ajoneuvon yksilöllisesti ja valokuvaamme auton ennen ja jälkeen käsittelyn." data-sv="Vi använder professionella produkter och utrustning. Vi fotograferar bilen före och efter behandlingen. Så vet båda parter exakt vad som gjordes." data-en="We use professional-grade products and equipment. We photograph the car before and after treatment. So both parties know exactly what was done.">Käytämme ammattilaistason tuotteita ja kalustoa. Hoidamme jokaisen ajoneuvon yksilöllisesti ja valokuvaamme auton ennen ja jälkeen käsittelyn.</span><img src="IMG_3092.jpg" alt="" onerror="this.style.display='none'"></div></div></div></div>
+<div class="ps srs ps-toggle" onclick="this.classList.toggle('open')"><div class="pn">04</div><div class="pc"><h3 data-fi="Luovutus" data-sv="Klart" data-en="Handover">Luovutus <em class="ps-chev"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></em></h3><p data-fi="Käydään lopputulos läpi yhdessä. Tyytyväisyystakuu jokaiseen käsittelyyn." data-sv="Vi går igenom resultatet. Om du inte är nöjd, fixar vi det." data-en="We review the result. If you're not satisfied, we fix it.">Käydään lopputulos läpi yhdessä. Tyytyväisyystakuu jokaiseen käsittelyyn.</p><div class="ps-expand"><div class="ps-detail"><span class="ps-detail-txt" data-fi="Käymme lopputuloksen läpi yhdessä autolla. Jos jokin kohta ei miellytä, korjaamme sen saman tien. Sinun ei tarvitse olla epävarma." data-sv="Vi går igenom slutresultatet tillsammans vid bilen. Om något inte passar, fixar vi det direkt. Nöjdhetsgaranti på varje behandling." data-en="We review the final result together at the car. If anything isn't right, we fix it on the spot. Satisfaction guarantee on every treatment.">Käymme lopputuloksen läpi yhdessä autolla. Jos jokin kohta ei miellytä, korjaamme sen saman tien. Sinun ei tarvitse olla epävarma.</span><img src="IMG_3028.jpg" alt="" onerror="this.style.display='none'"></div></div></div></div>
 </div>
 <div class="ba-banner sr">
 <div class="ba-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
@@ -498,14 +498,14 @@ body.ld .hero-btns{animation:si .55s .34s var(--ease) forwards}
 </div>
 <div class="ig-head sr"><span style="font-size:1.1rem">📸</span> <span style="font-size:.9rem;font-weight:600;color:var(--t2)"><a href="https://instagram.com/nhiservices" target="_blank" rel="noopener">@nhiservices</a></span></div>
 <div class="gg sr">
-<div class="gc"><img class="gc-img" src="IMG_3035.jpg" alt="Work 1"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3183.jpg" alt="Work 2"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3229.jpg" alt="Work 3"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3235.jpg" alt="Work 4"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3254.jpg" alt="Work 5"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3261.jpg" alt="Work 6"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3263.jpg" alt="Work 7"><span class="gp">IG</span></div>
-<div class="gc"><img class="gc-img" src="IMG_3287.jpg" alt="Work 8"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3035.jpg" onerror="this.style.display='none'" alt="Work 1"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3183.jpg" onerror="this.style.display='none'" alt="Work 2"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3229.jpg" onerror="this.style.display='none'" alt="Work 3"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3235.jpg" onerror="this.style.display='none'" alt="Work 4"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3254.jpg" onerror="this.style.display='none'" alt="Work 5"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3261.jpg" onerror="this.style.display='none'" alt="Work 6"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3263.jpg" onerror="this.style.display='none'" alt="Work 7"><span class="gp">IG</span></div>
+<div class="gc"><img class="gc-img" src="IMG_3287.jpg" onerror="this.style.display='none'" alt="Work 8"><span class="gp">IG</span></div>
 </div>
 <div class="gf sr"><a href="https://instagram.com/nhiservices" target="_blank" rel="noopener" data-fi="Seuraa @nhiservices Instagramissa →" data-sv="Följ @nhiservices på Instagram →" data-en="Follow @nhiservices on Instagram →">Seuraa @nhiservices Instagramissa →</a></div>
 </section>
@@ -581,10 +581,12 @@ if(eg){var bnEl=document.querySelector('.bn');var ftEl=document.querySelector('.
 var lastY=0,ticking=false,tnEl=document.querySelector('.tn');
 window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){var cy=window.scrollY;if(window.innerWidth<960){if(cy>lastY&&cy>80)tnEl.classList.add('nav-hidden');else tnEl.classList.remove('nav-hidden')}else{tnEl.classList.remove('nav-hidden')}lastY=cy;ticking=false});ticking=true}},{passive:true});
 // Auto-show images
-window.addEventListener('load',function(){
+document.addEventListener('DOMContentLoaded',function(){
 document.body.classList.add('ld');
+});
+window.addEventListener('load',function(){
 document.querySelectorAll('.tm-img,.gc-img').forEach(function(img){
-if(img.getAttribute('src')){img.style.display='block';var ph=img.nextElementSibling;if(ph)ph.style.display='none'}
+if(img.getAttribute('src')&&img.naturalWidth>0){img.style.display='block';var ph=img.nextElementSibling;if(ph)ph.style.display='none'}
 });
 });
 // Scroll reveal
