@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#080808">
-<title>Nav Test 4 - Full Test</title>
+<title>Nav Test 5</title>
 <style>
-:root { --bg:#080808; }
+:root { --bg:#080808; --red:#4a0e0b; }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { background-color:#080808; }
-body { background:var(--bg); color:#aaa; font-family:-apple-system,system-ui,sans-serif;
+body { background-color:#080808; color:#aaa; font-family:-apple-system,system-ui,sans-serif;
   padding-top:calc(52px + env(safe-area-inset-top,0px));
   padding-bottom:56px; }
 
@@ -31,29 +31,45 @@ body { background:var(--bg); color:#aaa; font-family:-apple-system,system-ui,san
   border-bottom:1px solid rgba(255,255,255,.06);
   z-index:-1;
 }
-.tn-txt { font-size:1.2rem; font-weight:800; color:#fff; text-decoration:none; }
-.tn-txt b { color:#c22318; }
+/* Placeholder space where logo sits inside nav — keeps alignment */
+.tn-logo-space {
+  width:48px; /* rough width of logo at display size */
+}
 .tn-r { display:flex; gap:1.25rem; }
 .tn-r a { color:rgba(255,255,255,.7); text-decoration:none; font-size:.85rem; }
 
 /* ── FLOATING LOGO ── */
+/* Completely outside the nav element. Not clipped by overflow:hidden.
+   Positioned so it vertically centers on the nav bar and overflows below. */
 .tn-logo-float {
   position:fixed;
-  top:env(safe-area-inset-top,0px);
+  /* Top = safe area, so logo top aligns with nav content area top */
+  top:calc(env(safe-area-inset-top,0px) + 2px);
   left:1.5rem;
   z-index:901;
-  height:52px;
-  display:flex; align-items:center;
   pointer-events:none;
   transition:transform .5s cubic-bezier(.25,.1,.25,1);
 }
-.tn-logo-float a { pointer-events:auto; }
-.tn-logo-float img {
-  height:72px; width:auto;
-  filter:drop-shadow(0 2px 12px rgba(0,0,0,.7));
+.tn-logo-float a {
+  pointer-events:auto;
+  display:block;
+  line-height:0;
 }
-/* When nav hides, logo hides too */
-.tn.nav-hidden ~ .tn-logo-float { transform:translateY(calc(-100% - 30px)); }
+.tn-logo-float img {
+  height:68px; width:auto;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.7));
+  display:block;
+}
+/* Text fallback when image fails */
+.tn-logo-float .logo-txt {
+  font-size:1.15rem; font-weight:800; color:#fff;
+  text-decoration:none; letter-spacing:-.02em;
+  line-height:52px; /* vertically center in nav height */
+}
+.tn-logo-float .logo-txt b { color:#c22318; }
+/* Hide text when image loads */
+.tn-logo-float img:not([src=""])+.logo-txt { display:none; }
+.tn-logo-float img[src=""] { display:none; }
 
 /* ── BOTTOM NAV ── */
 .bn {
@@ -74,8 +90,8 @@ body { background:var(--bg); color:#aaa; font-family:-apple-system,system-ui,san
 .bn a { color:rgba(255,255,255,.5); text-decoration:none; font-size:.7rem; text-align:center; }
 .bn svg { display:block; margin:0 auto 2px; width:22px; height:22px; stroke:rgba(255,255,255,.5); fill:none; stroke-width:1.5; }
 
-/* Glow state */
-.bn.glow-on .bn-bg { background:rgba(100,15,12,.9); border-top-color:rgba(217,48,37,.3); }
+/* Glow states — use the SAME red everywhere */
+.bn.glow-on .bn-bg { background:var(--red); border-top-color:rgba(217,48,37,.3); }
 .bn.glow-on a { color:rgba(255,255,255,.8); }
 .bn.glow-on svg { stroke:rgba(255,255,255,.8); }
 
@@ -87,7 +103,7 @@ body { background:var(--bg); color:#aaa; font-family:-apple-system,system-ui,san
   color:#555;
   transition:background-color .6s ease, color .6s ease;
 }
-.foot.glow-on { background-color:rgba(80,12,10,.85); color:#888; }
+.foot.glow-on { background-color:var(--red); color:#999; }
 
 /* ── CONTENT ── */
 section { padding:3rem 1.5rem; min-height:80vh; }
@@ -102,7 +118,7 @@ h2 { color:#fff; margin-bottom:1rem; font-size:1.6rem; }
 <!-- Top nav -->
 <nav class="tn" id="tn">
   <div class="tn-bg"></div>
-  <a href="#" class="tn-txt"><b>NHI</b> Services</a>
+  <div class="tn-logo-space"></div>
   <div class="tn-r">
     <a href="#s1">Tekijät</a>
     <a href="#s2">Palvelut</a>
@@ -110,24 +126,25 @@ h2 { color:#fff; margin-bottom:1rem; font-size:1.6rem; }
   </div>
 </nav>
 
-<!-- Floating logo (outside nav, not clipped) -->
+<!-- Floating logo — entirely outside nav, free to overflow -->
 <div class="tn-logo-float" id="logoFloat">
   <a href="#">
     <img src="nhiservices.svg" alt="NHI"
-         onerror="this.parentElement.parentElement.style.display='none'">
+         onerror="this.src='';this.style.display='none'">
+    <span class="logo-txt"><b>NHI</b> Services</span>
   </a>
 </div>
 
 <section id="s1">
   <h2>Blur Test</h2>
-  <p>Scroll the colored bars behind the nav. Colors should glow through but text should not be readable.</p>
+  <p>Scroll colored bars behind nav — colors should glow, text should not be readable.</p>
   <div class="color-bar">
     <div style="background:#c22318"></div>
     <div style="background:#d4a017"></div>
     <div style="background:#fff"></div>
     <div style="background:#c22318"></div>
   </div>
-  <p style="font-size:2rem;font-weight:900;color:#fff;margin:1rem 0">CAN YOU READ THIS BEHIND THE NAV?</p>
+  <p style="font-size:2rem;font-weight:900;color:#fff;margin:1rem 0">CAN YOU READ THIS BEHIND NAV?</p>
   <div class="color-bar">
     <div style="background:#d4a017"></div>
     <div style="background:#c22318"></div>
@@ -140,17 +157,13 @@ h2 { color:#fff; margin-bottom:1rem; font-size:1.6rem; }
 
 <section id="s2">
   <h2>Section 2</h2>
-  <p>More content for scrolling.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <p>More content.</p><p>Lorem ipsum.</p><p>Lorem ipsum.</p><p>Lorem ipsum.</p>
 </section>
 
 <section id="s3">
   <h2>Section 3 — Scroll to end</h2>
-  <p>Keep scrolling. Footer + bottom nav should turn red. Overscroll bounce should show red, not black.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Footer + bottom nav turn red. Overscroll should show same red everywhere — no dark/light mismatch.</p>
+  <p>Lorem ipsum.</p><p>Lorem ipsum.</p>
 </section>
 
 <footer class="foot" id="foot">© 2026 NHI Services Oy</footer>
@@ -164,32 +177,32 @@ h2 { color:#fff; margin-bottom:1rem; font-size:1.6rem; }
 </nav>
 
 <script>
-// Scroll: end-of-page glow
+// End-of-page glow — ALL reds match via --red variable
+var bn=document.getElementById('bn'), ft=document.getElementById('foot');
 window.addEventListener('scroll', function(){
-  var sh = document.documentElement.scrollHeight;
-  var atEnd = scrollY + innerHeight > sh - 200;
-  
-  document.getElementById('bn').classList.toggle('glow-on', atEnd);
-  document.getElementById('foot').classList.toggle('glow-on', atEnd);
-  document.documentElement.style.backgroundColor = atEnd ? '#3d0a08' : '#080808';
-  document.body.style.backgroundColor = atEnd ? '#3d0a08' : '#080808';
-}, {passive:true});
+  var sh=document.documentElement.scrollHeight;
+  var atEnd=scrollY+innerHeight>sh-200;
+  bn.classList.toggle('glow-on',atEnd);
+  ft.classList.toggle('glow-on',atEnd);
+  // html + body bg = same --red so overscroll matches footer/nav
+  var col=atEnd?'#4a0e0b':'#080808';
+  document.documentElement.style.backgroundColor=col;
+  document.body.style.backgroundColor=col;
+},{passive:true});
 
-// Nav hide on scroll (logo follows)
-var lastY=0;
+// Nav hide on scroll
+var lastY=0,tn=document.getElementById('tn'),logo=document.getElementById('logoFloat');
 window.addEventListener('scroll', function(){
-  var cy = scrollY;
-  var tn = document.getElementById('tn');
-  var logo = document.getElementById('logoFloat');
-  if(cy > lastY && cy > 80){
-    tn.classList.add('nav-hidden');
-    logo.style.transform = 'translateY(calc(-100% - 30px))';
+  var cy=scrollY;
+  if(cy>lastY&&cy>80){
+    tn.style.transform='translateY(-100%)';
+    logo.style.transform='translateY(calc(-100% - 40px))';
   } else {
-    tn.classList.remove('nav-hidden');
-    logo.style.transform = '';
+    tn.style.transform='';
+    logo.style.transform='';
   }
-  lastY = cy;
-}, {passive:true});
+  lastY=cy;
+},{passive:true});
 </script>
 </body>
 </html>
